@@ -1,4 +1,5 @@
 import "./App.css";
+import { Experience } from "./Experience";
 
 function App() {
   return (
@@ -6,7 +7,7 @@ function App() {
       <div className="max-w-6xl w-full flex flex-col">
         <h1 className="self-center">Armand's Web CV</h1>
         <h2>Summary</h2>
-        <h2>Experience</h2>
+        <Experience />
         <h2>Education</h2>
       </div>
     </div>
