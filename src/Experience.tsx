@@ -36,7 +36,7 @@ export const Experience = () => (
               <b>TypeScript, React and Tailwind</b>.
             </li>
             <li>
-              Writing <b>front-end unit tests</b> using Jest
+              Writing <b>front-end unit tests</b> using Jest.
             </li>
             <li>
               <b>MVC</b> and <b>WebAPI</b> back-end development with{" "}
@@ -48,7 +48,7 @@ export const Experience = () => (
             </li>
             <li>
               Writing a wide range of <b>T-SQL</b> scripts for monitoring client
-              dbs and storing data in local SQL Server repository.
+              dbs and storing data in a local SQL Server repository.
             </li>
             <li>
               Championing <b>accessibility</b> and improving it around the
@@ -106,7 +106,7 @@ export const Experience = () => (
             <li>
               Spear-heading use of <b>Machine Learning</b> for root-cause
               analysis and predictive maintenance on site via{" "}
-              <a href="https://rapidminer.com/">RapidMiner</a>
+              <a href="https://rapidminer.com/">RapidMiner</a>.
             </li>
             <li>
               Development of a system for detecting screw thread damage via{" "}
@@ -120,7 +120,8 @@ export const Experience = () => (
             </li>
             <li>
               Creation of <b>admin tools</b> for configuring SQL Servers
-              including <br />
+              including:
+              <br />
               Mapping network drives, managing Windows services (via <b>WMI</b>
               ), writing <b>T-SQL</b>, and monitoring databases.
             </li>
@@ -221,8 +222,8 @@ export const Experience = () => (
             for use on offshore wind farms. It included:
           </p>
           <ul className="list-disc pl-8">
-            <li>Producing Mathcad calculations/simulations</li>
-            <li>Writing design and FMEA documents</li>
+            <li>Producing Mathcad calculations/simulations.</li>
+            <li>Writing design and FMEA documents.</li>
           </ul>
           <p>
             A significant amount of downtime between projects allowed for the
@@ -230,11 +231,11 @@ export const Experience = () => (
             <b>Visual Basic for Applications</b>. The use-cases included:
           </p>
           <ul className="list-disc pl-8">
-            <li>Project planning and pricing</li>
-            <li>Scheduling and summarising simulations</li>
+            <li>Project planning and pricing.</li>
+            <li>Scheduling and summarising simulations.</li>
             <li>
               Generating documents from templates using MS Word and Adobe
-              Acrobat APIs
+              Acrobat APIs.
             </li>
           </ul>
         </div>
