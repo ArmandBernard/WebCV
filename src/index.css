@@ -10,7 +10,12 @@
     @apply text-xl;
   }
   a {
-    @apply underline;
     @apply text-blue-400;
+  }
+  a:hover {
+    @apply underline;
+  }
+  a:visited {
+    @apply text-violet-400;
   }
 }
