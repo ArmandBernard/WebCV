@@ -9,7 +9,13 @@
   h2 {
     @apply text-xl;
   }
-  h3 {
-    @apply text-lg;
+  a {
+    @apply text-blue-400;
+  }
+  a:hover {
+    @apply underline;
+  }
+  a:visited {
+    @apply text-violet-400;
   }
 }
