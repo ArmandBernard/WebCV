@@ -1,3 +1,4 @@
+import { Tag } from "./Tag";
 import { Timeline } from "./Timeline";
 import { TimelineSegment } from "./TimelineSegment";
 
@@ -11,6 +12,17 @@ export const Experience = () => (
             Software Engineer at{" "}
             <a href="https://www.red-gate.com/">Redgate Software</a>
           </h3>
+          <div className="flex flex-wrap gap-2">
+            <Tag>.NET Core</Tag>
+            <Tag>CI/CD</Tag>
+            <Tag>C#</Tag>
+            <Tag>Design System</Tag>
+            <Tag>React</Tag>
+            <Tag>SQL</Tag>
+            <Tag>Tailwind</Tag>
+            <Tag>TypeScript</Tag>
+            <Tag>Unit Testing</Tag>
+          </div>
           <p>
             Worked as a full-stack software engineer on{" "}
             <a href="https://www.red-gate.com/products/dba/sql-monitor/">
@@ -77,6 +89,15 @@ export const Experience = () => (
             Manufacturing Engineer at{" "}
             <a href="https://www.borgwarner.com/home">BorgWarner</a>
           </h3>
+          <div className="flex flex-wrap gap-2">
+            <Tag>.NET Framework</Tag>
+            <Tag>C#</Tag>
+            <Tag>Machine Learning</Tag>
+            <Tag>Machine Vision</Tag>
+            <Tag>SQL</Tag>
+            <Tag>WinForms</Tag>
+            <Tag>WiX Toolset</Tag>
+          </div>
           <p className="italic">
             Continuation of the previous role after BorgWarner acquisition of
             Delphi Technologies.
@@ -118,6 +139,14 @@ export const Experience = () => (
             Manufacturing Engineer at{" "}
             <a href="https://www.delphiautoparts.com/">Delphi Technologies</a>
           </h3>
+          <div className="flex flex-wrap gap-2">
+            <Tag>.NET Framework</Tag>
+            <Tag>C#</Tag>
+            <Tag>Machine Vision</Tag>
+            <Tag>SQL</Tag>
+            <Tag>WinForms</Tag>
+            <Tag>WiX Toolset</Tag>
+          </div>
           <p>
             Worked as the sole developer in the Continuous Improvement team, a
             small cross-disciplinary team of manufacturing engineers and
@@ -153,11 +182,11 @@ export const Experience = () => (
               Also integrated 2D code scanning, <b>RFID badge authentication</b>{" "}
               and statistics collection.
             </li>
-            <b>
+            <li>
               Writing installers with the{" "}
               <a href="https://wixtoolset.org/">WiX toolset</a> with automatic
               updates via TeamCity.
-            </b>
+            </li>
             <li>
               Fail-safe, always running code for communication with{" "}
               <a href="https://www.cognex.com/">COGNEX</a> machine vision
@@ -177,6 +206,11 @@ export const Experience = () => (
           <h3 className="font-semibold">
             Placement at Atkins engineering consultancy
           </h3>
+          <div className="flex flex-wrap gap-2">
+            <Tag>.NET Framework</Tag>
+            <Tag>VBA</Tag>
+            <Tag>WinForms</Tag>
+          </div>
           <p>
             1 year placement working as a civil/mechanical engineer. Mix of
             engineering work and trying to improve internal systems in
@@ -192,8 +226,8 @@ export const Experience = () => (
           </ul>
           <p>
             A significant amount of downtime between projects allowed for the
-            writing of several pieces of software using Visual Basic for
-            Applications. The use-cases included:
+            writing of several pieces of software using{" "}
+            <b>Visual Basic for Applications</b>. The use-cases included:
           </p>
           <ul className="list-disc pl-8">
             <li>Project planning and pricing</li>
