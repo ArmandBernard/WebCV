@@ -5,17 +5,19 @@ export const Experience = () => {
     <>
       <h2>Experience</h2>
       <TimelineSegment timelineText="Present">
-        <div>
+        <div className="flex flex-col gap-2">
           <h3 className="font-semibold">
             Software Engineer at{" "}
             <a href="https://www.red-gate.com/">Redgate Software</a>
           </h3>
-          Worked on{" "}
+          <p>
+            Worked as a full-stack software engineer on{" "}
           <a href="https://www.red-gate.com/products/dba/sql-monitor/">
             SQL Monitor
           </a>
           , a database monitoring tool targeted at database administrators.
-          <ul className="list-disc pl-8 leading-normal">
+          </p>
+          <ul className="list-disc pl-8">
             <li>
               <b>Front-end</b> web-app development using{" "}
               <b>TypeScript, React and Tailwind</b>.
@@ -42,8 +44,11 @@ export const Experience = () => {
               Migrating code from older frameworks such as: jQuery, Knockout.
             </li>
           </ul>
-          Heavily involved in the development of internal <b>design systems</b>.
-          <ul className="list-disc pl-8 leading-normal">
+          <p>
+            Heavily involved in the development of internal{" "}
+            <b>design systems</b>.
+          </p>
+          <ul className="list-disc pl-8">
             <li>
               Choosing the technologies and libraries involved (Yarn, React,
               Tailwind, MUI).
