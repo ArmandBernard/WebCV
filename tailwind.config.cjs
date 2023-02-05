@@ -1,5 +1,3 @@
-const colors = require("tailwindcss/colors");
-
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: ["./src/**/*.{html,js,jsx,ts,tsx}", "./*.html"],
@@ -7,10 +5,11 @@ module.exports = {
     fontFamily: {
       sans: ["Roboto", "sans-serif"],
     },
-    colors: {
-      ...colors,
-      primary: "var(--primary)",
-      "tag-background": "var(--tag-background)",
+    extend: {
+      colors: {
+        primary: "var(--primary)",
+        "tag-background": "var(--tag-background)",
+      },
     },
   },
   plugins: [],
