@@ -9,7 +9,6 @@ function App() {
         <h1 className="self-center m-4">Armand Bernard's Web CV</h1>
         <AboutMe />
         <Experience />
-        <h2>Education</h2>
       </div>
     </div>
   );
