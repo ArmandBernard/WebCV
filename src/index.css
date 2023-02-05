@@ -18,6 +18,10 @@
   a:visited {
     @apply text-violet-400;
   }
+
+  body {
+    @apply dark:bg-neutral-800 dark:text-white;
+  }
 }
 
 :root {
