@@ -166,6 +166,48 @@ export const Experience = () => {
             </ul>
           </div>
         </TimelineSegment>
+        <TimelineSegment timelineText="May 2019">
+          <i>Searching for work</i>
+        </TimelineSegment>
+        <TimelineSegment timelineText="Sept 2018">
+          <i>University</i>
+        </TimelineSegment>
+        <TimelineSegment timelineText="Sept 2016">
+          <div className="flex flex-col gap-2">
+            <h3 className="font-semibold">
+              Placement at Atkins engineering consultancy
+            </h3>
+            <p>
+              1 year placement working as a civil/mechanical engineer. Mix of
+              engineering work and trying to improve internal systems in
+              down-time.
+            </p>
+            <p>
+              Engineering work was around structural verification of davit
+              cranes for use on offshore wind farms. It included:
+            </p>
+            <ul className="list-disc pl-8">
+              <li>Producing Mathcad calculations/simulations</li>
+              <li>Writing design and FMEA documents</li>
+            </ul>
+            <p>
+              A significant amount of downtime between projects allowed for the
+              writing of several pieces of software using Visual Basic for
+              Applications. The use-cases included:
+            </p>
+            <ul className="list-disc pl-8">
+              <li>Project planning and pricing</li>
+              <li>Scheduling and summarising simulations</li>
+              <li>
+                Generating documents from templates using MS Word and Adobe
+                Acrobat APIs
+              </li>
+            </ul>
+          </div>
+        </TimelineSegment>
+        <TimelineSegment timelineText="Sept 2015">
+          <i>University</i>
+        </TimelineSegment>
       </Timeline>
     </>
   );
