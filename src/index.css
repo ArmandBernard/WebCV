@@ -9,4 +9,8 @@
   h2 {
     @apply text-xl;
   }
+  a {
+    @apply underline;
+    @apply text-blue-400;
+  }
 }
