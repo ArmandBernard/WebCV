@@ -19,3 +19,8 @@
     @apply text-violet-400;
   }
 }
+
+:root {
+  --primary: #38bdf8;
+  --tag-background: #0369a1;
+}
