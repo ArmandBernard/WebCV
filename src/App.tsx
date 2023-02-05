@@ -1,12 +1,13 @@
+import { AboutMe } from "./AboutMe";
 import "./App.css";
 import { Experience } from "./Experience";
 
 function App() {
   return (
     <div className="flex justify-center">
-      <div className="max-w-6xl flex flex-col px-4 flex-grow">
+      <div className="max-w-4xl flex flex-col px-4 flex-grow gap-4">
         <h1 className="self-center">Armand's Web CV</h1>
-        <h2>Summary</h2>
+        <AboutMe />
         <Experience />
         <h2>Education</h2>
       </div>

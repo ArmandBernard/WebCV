@@ -40,7 +40,8 @@ export const Experience = () => {
                 client dbs and storing data in local SQL Server repository.
               </li>
               <li>
-                Improving product <b>accessibility</b>
+                Championing <b>accessibility</b> and improving it around the
+                product.
               </li>
               <li>
                 Migrating code from older frameworks such as: jQuery, Knockout.
