@@ -199,10 +199,10 @@ export const Experience = () => (
       <TimelineSegment timelineText="May 2019">
         <i>Searching for work</i>
       </TimelineSegment>
-      <TimelineSegment timelineText="Sept 2018">
+      <TimelineSegment timelineText="Sep 2018">
         <i>University</i>
       </TimelineSegment>
-      <TimelineSegment timelineText="Sept 2016">
+      <TimelineSegment timelineText="Sep 2016">
         <div className="flex flex-col gap-2">
           <h3 className="font-semibold">
             Placement at Atkins engineering consultancy
@@ -240,7 +240,7 @@ export const Experience = () => (
           </ul>
         </div>
       </TimelineSegment>
-      <TimelineSegment timelineText="Sept 2015">
+      <TimelineSegment timelineText="Sep 2015">
         <i>University</i>
       </TimelineSegment>
     </Timeline>

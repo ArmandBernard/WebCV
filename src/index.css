@@ -5,9 +5,11 @@
 @layer base {
   h1 {
     @apply text-2xl;
+    @apply max-sm:text-xl;
   }
   h2 {
     @apply text-xl;
+    @apply max-sm:text-lg;
   }
   a {
     @apply text-blue-400;
@@ -17,6 +19,11 @@
   }
   a:visited {
     @apply text-violet-400;
+  }
+
+  body {
+    @apply dark:bg-neutral-800 dark:text-white;
+    @apply max-sm:text-sm;
   }
 }
 
