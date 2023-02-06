@@ -4,7 +4,7 @@ export const Education = () => (
   <div>
     <h2>Education</h2>
     <h3 id="university" className="text-lg my-2">
-      University (2013 - 2018)
+      University
     </h3>
     <p>
       <b>1st class MEng</b> (Master of Engineering) in Mechanical Engineering
