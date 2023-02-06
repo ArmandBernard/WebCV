@@ -20,16 +20,18 @@ export const Education = () => (
       ]}
     />
     <h3 className="text-lg my-2">GCSEs</h3>
-    <p>10 passes including:</p>
-    <GradeList
-      grades={[
-        ["Maths", "A"],
-        ["Physics", "A"],
-        ["Chemistry", "A"],
-        ["Biology", "A"],
-        ["English language", "B"],
-      ]}
-    />
+    <div className="flex flex-col gap-2">
+      <p>10 passes including:</p>
+      <GradeList
+        grades={[
+          ["Maths", "A"],
+          ["Physics", "A"],
+          ["Chemistry", "A"],
+          ["Biology", "A"],
+          ["English language", "B"],
+        ]}
+      />
+    </div>
   </div>
 );
 
@@ -38,7 +40,7 @@ interface GradeListProps {
 }
 
 const GradeList: FunctionComponent<GradeListProps> = (props) => (
-  <ul className="flex justify-between">
+  <ul className="flex items-baseline justify-between">
     {props.grades.map(([subject, grade]) => (
       <li className="flex gap-2">
         {subject}
