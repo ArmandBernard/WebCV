@@ -243,6 +243,9 @@ export const Experience = () => (
       <TimelineSegment timelineText="Sep 2015">
         <i>University</i>
       </TimelineSegment>
+      <TimelineSegment timelineText="Sep 2013">
+        <i>University started</i>
+      </TimelineSegment>
     </Timeline>
   </>
 );
