@@ -40,11 +40,11 @@ interface GradeListProps {
 }
 
 const GradeList: FunctionComponent<GradeListProps> = (props) => (
-  <ul className="flex items-baseline justify-between">
+  <ul className="flex flex-wrap items-baseline gap-4">
     {props.grades.map(([subject, grade]) => (
-      <li className="flex gap-2">
+      <li className="flex items-baseline gap-2">
         {subject}
-        <span className="flex justify-center bg-grade h-6 w-6 rounded-full">
+        <span className="flex items-center justify-center bg-grade h-6 w-6 rounded-full">
           {grade}
         </span>
       </li>
