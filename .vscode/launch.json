@@ -23,7 +23,7 @@
       "request": "launch",
       "name": "build",
       "runtimeExecutable": "npm",
-      "runtimeArgs": ["run-script", "preview"]
+      "runtimeArgs": ["run-script", "build"]
     }
   ]
 }
