@@ -1,8 +1,8 @@
 # Simple workflow for deploying static content to GitHub Pages
-name: Deploy static content to Pages
+name: Deploy to Pages
 
 on:
-  # Runs on pushes targeting the default branch
+  # Runs on pushes targeting main
   push:
     branches: ["main"]
 
@@ -30,12 +30,16 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-      - name: Use Node.js
+      - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
           node-version: "18.x"
-      - run: npm install
-      - run: npm run build --if-present
+      - name: Install
+        run: npm install
+      - name: Build
+        run: npm run build --if-present
+      - name: Test
+        run: npm run test --if-present
       - name: Setup Pages
         uses: actions/configure-pages@v3
       - name: Upload artifact
