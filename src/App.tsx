@@ -1,5 +1,6 @@
 import { AboutMe } from "./AboutMe";
 import "./App.css";
+import { Education } from "./Education";
 import { Experience } from "./Experience";
 
 function App() {
@@ -9,6 +10,7 @@ function App() {
         <h1 className="self-center m-4">Armand Bernard's Web CV</h1>
         <AboutMe />
         <Experience />
+        <Education />
       </div>
     </div>
   );
