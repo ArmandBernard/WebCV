@@ -1,4 +1,4 @@
-import { Tag } from "./Tag";
+import { FunctionComponent } from "react";
 
 export const Education = () => (
   <div>
@@ -11,25 +11,41 @@ export const Education = () => (
       from Warwick University.
     </p>
     <h3 className="text-lg my-2">A-levels</h3>
-    <ul className="flex justify-between">
-      {["Maths: A", "Further Maths: B", "Physics: B", "Chemistry: B"].map(
-        (grade) => (
-          <li>{grade}</li>
-        )
-      )}
-    </ul>
+    <GradeList
+      grades={[
+        ["Maths", "A"],
+        ["Further Maths", "B"],
+        ["Physics", "B"],
+        ["Chemistry", "B"],
+      ]}
+    />
     <h3 className="text-lg my-2">GCSEs</h3>
     <p>10 passes including:</p>
-    <ul className="flex justify-between">
-      {[
-        "Maths: A",
-        "Physics: A",
-        "Chemistry: A",
-        "Biology: A",
-        "English language: B",
-      ].map((grade) => (
-        <li>{grade}</li>
-      ))}
-    </ul>
+    <GradeList
+      grades={[
+        ["Maths", "A"],
+        ["Physics", "A"],
+        ["Chemistry", "A"],
+        ["Biology", "A"],
+        ["English language", "B"],
+      ]}
+    />
   </div>
+);
+
+interface GradeListProps {
+  grades: [subject: string, grade: string][];
+}
+
+const GradeList: FunctionComponent<GradeListProps> = (props) => (
+  <ul className="flex justify-between">
+    {props.grades.map(([subject, grade]) => (
+      <li className="flex gap-2">
+        {subject}
+        <span className="flex justify-center bg-grade h-6 w-6 rounded-full">
+          {grade}
+        </span>
+      </li>
+    ))}
+  </ul>
 );
