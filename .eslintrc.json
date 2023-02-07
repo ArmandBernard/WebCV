@@ -22,7 +22,6 @@
     "react-hooks/exhaustive-deps": "error",
     "react/react-in-jsx-scope": "off",
     "indent": [1, 2, { "SwitchCase": 1 }],
-    "linebreak-style": [1, "windows"],
     "quotes": [1, "double"],
     "semi": [1, "always"]
   }
