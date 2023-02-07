@@ -12,13 +12,13 @@
     @apply max-sm:text-lg;
   }
   a {
-    @apply text-blue-400;
+    @apply text-blue-600 dark:text-blue-400;
   }
   a:hover {
     @apply underline;
   }
   a:visited {
-    @apply text-violet-400;
+    @apply text-violet-600 dark:text-violet-400;
   }
 
   body {
