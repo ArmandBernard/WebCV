@@ -5,8 +5,10 @@
   },
   "extends": [
     "eslint:recommended",
+    "plugin:react/jsx-runtime",
     "plugin:react/recommended",
-    "plugin:@typescript-eslint/recommended"
+    "plugin:@typescript-eslint/recommended",
+    "plugin:react-hooks/recommended"
   ],
   "overrides": [],
   "parser": "@typescript-eslint/parser",
@@ -14,11 +16,14 @@
     "ecmaVersion": "latest",
     "sourceType": "module"
   },
-  "plugins": ["react", "@typescript-eslint"],
+  "plugins": ["react", "react-hooks", "@typescript-eslint"],
   "rules": {
-    "indent": ["warning", 2],
-    "linebreak-style": ["error", "windows"],
-    "quotes": ["error", "double"],
-    "semi": ["error", "always"]
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "error",
+    "react/react-in-jsx-scope": "off",
+    "indent": [1, 2, { "SwitchCase": 1 }],
+    "linebreak-style": [1, "windows"],
+    "quotes": [1, "double"],
+    "semi": [1, "always"]
   }
 }
