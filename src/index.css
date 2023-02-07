@@ -22,7 +22,7 @@
   }
 
   body {
-    @apply dark:bg-neutral-800 dark:text-white;
+    @apply bg-white text-black dark:bg-neutral-800 dark:text-white;
     @apply max-sm:text-sm;
   }
 }
