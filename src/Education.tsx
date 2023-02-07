@@ -42,7 +42,7 @@ interface GradeListProps {
 const GradeList: FunctionComponent<GradeListProps> = (props) => (
   <ul className="flex flex-wrap items-baseline gap-4">
     {props.grades.map(([subject, grade]) => (
-      <li className="flex items-baseline gap-2">
+      <li key={subject} className="flex items-baseline gap-2">
         {subject}
         <span
           className="flex items-center justify-center bg-grade h-6 w-6 rounded-full"
