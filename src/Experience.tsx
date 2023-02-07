@@ -151,8 +151,8 @@ export const Experience = () => (
           <p>
             Worked as the sole developer in the Continuous Improvement team, a
             small cross-disciplinary team of manufacturing engineers and
-            technicians. The team's goal was to create or improve systems around
-            the factory.
+            technicians. The team&apos;s goal was to create or improve systems
+            around the factory.
           </p>
           <p>
             Designed, developed and tested all applications mentioned below.

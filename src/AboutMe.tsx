@@ -25,8 +25,8 @@ export const AboutMe = () => (
         With a little more experience I can teach it too.
       </p>
       <p>
-        I enjoy <b>teaching</b>. Shortly after learning something I'll spread
-        that knowledge in the form of one-to-one teaching, documentation,
+        I enjoy <b>teaching</b>. Shortly after learning something I&apos;ll
+        spread that knowledge in the form of one-to-one teaching, documentation,
         debates or a talk.
       </p>
       <p>
