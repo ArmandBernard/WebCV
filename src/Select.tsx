@@ -48,7 +48,7 @@ export const Select: FunctionComponent<SelectProps> = (props) => {
   return (
     <div className="flex flex-col w-40">
       <button
-        className="p-2 border rounded text-left flex justify-between"
+        className="p-2 border rounded text-left flex justify-between gap-2"
         onClick={onClickExpand}
       >
         {props.selectedOption ?? "Select an option"}
@@ -63,7 +63,7 @@ export const Select: FunctionComponent<SelectProps> = (props) => {
             <li key={option}>
               <button
                 ref={refs[index]}
-                className="p-2 w-full text-left"
+                className="p-2 w-full text-left whitespace-nowrap"
                 onClick={() => onClickItem(option)}
               >
                 {option}
