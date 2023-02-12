@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useRef } from "react";
+import { useCallback, useEffect, useId, useRef } from "react";
 import { AboutMe } from "./AboutMe";
 import "./App.css";
 import { Education } from "./Education";
@@ -8,6 +8,8 @@ import { useLocalStorage } from "./useLocalStorage";
 
 function App() {
   const htmlRef = useRef(document.documentElement);
+
+  const themePickerLabel = useId();
 
   const setTheme = useCallback((dark: boolean) => {
     if (dark) {
@@ -36,15 +38,16 @@ function App() {
 
   return (
     <div>
-      <label className="absolute right-4 top-4 flex items-baseline gap-2">
-        Theme
+      <div className="absolute right-4 top-4 flex items-baseline gap-2">
+        <label id={themePickerLabel}>Theme</label>
         <Select
+          aria-labelledby={themePickerLabel}
           className="w-20"
           options={["dark", "light"]}
           selectedOption={themePreference ?? undefined}
           setSelectedOption={setThemePreference}
         />
-      </label>
+      </div>
 
       <div className="flex justify-center">
         <div className="max-w-4xl flex flex-col px-4 flex-grow gap-4 mb-8">
