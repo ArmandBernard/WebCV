@@ -35,7 +35,7 @@ function App() {
 
   // use local storage persisting state for app-level theme preference.
   // Defaults to system default.
-  const { get: themePreference, set: setThemePreference } = useLocalStorage(
+  const [themePreference, setThemePreference] = useLocalStorage(
     "themePreference",
     "auto"
   );

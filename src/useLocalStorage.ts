@@ -1,6 +1,9 @@
 import { useEffect, useState } from "react";
 
-export const useLocalStorage = (key: string, defaultValue?: string) => {
+export const useLocalStorage = (
+  key: string,
+  defaultValue?: string
+): [state: string | null, setState: (newValue: string) => void] => {
   const [state, setState] = useState<string | null>(defaultValue ?? null);
 
   // setter function that sets both local storage and state
@@ -23,5 +26,5 @@ export const useLocalStorage = (key: string, defaultValue?: string) => {
     storedValue !== null && setState(storedValue);
   }, [key, defaultValue, state]);
 
-  return { get: state, set };
+  return [state, set];
 };
