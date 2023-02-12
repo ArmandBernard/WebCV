@@ -125,23 +125,35 @@ export const Select: FunctionComponent<SelectProps> = (props) => {
           aria-label={props["aria-label"]}
           aria-labelledby={props["aria-labelledby"]}
           className="flex flex-col absolute border border-neutral-400 dark:border-white rounded w-full"
-          onKeyDown={onMenuKeyDown}
           role="listbox"
           onBlur={onBlur}
+          onKeyDown={onMenuKeyDown}
         >
-          {props.options.map((option, index) => (
-            <button
-              key={option}
-              role="option"
-              tabIndex={-1}
-              ref={refs[index]}
-              className="p-2 w-full text-left whitespace-nowrap"
-              onClick={() => onClickItem(option)}
-              aria-selected={option === props.selectedOption}
-            >
-              {option}
-            </button>
-          ))}
+          {props.options.map((option, index) => {
+            const selected = option === props.selectedOption;
+
+            return (
+              <button
+                key={option}
+                aria-selected={selected}
+                role="option"
+                tabIndex={-1}
+                ref={refs[index]}
+                className="p-2 flex items-baseline justify-between w-full text-left whitespace-nowrap"
+                onClick={() => onClickItem(option)}
+              >
+                {option}
+                {selected && (
+                  <span
+                    aria-hidden
+                    className="material-symbols-outlined self-center"
+                  >
+                    done
+                  </span>
+                )}
+              </button>
+            );
+          })}
         </div>
       </div>
     </div>
