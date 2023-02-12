@@ -26,14 +26,22 @@ export const Select: FunctionComponent<SelectProps> = (props) => {
   };
 
   const onClickExpand = () => {
-    setOpen(true);
+    if (!open) {
+      setOpen(true);
 
-    setTimeout(() => focusItem(0), 0);
+      setTimeout(() => focusItem(0), 0);
+    }
   };
 
   const onClickItem = (option: string) => {
     setSelected(option);
     setOpen(false);
+  };
+
+  const onMenuKeyDown = (e: React.KeyboardEvent) => {
+    if (e.key === "Escape") {
+      setOpen(false);
+    }
   };
 
   return (
@@ -46,7 +54,10 @@ export const Select: FunctionComponent<SelectProps> = (props) => {
         <span>v</span>
       </button>
       <div ref={dropdown} className={`relative ${!open && "invisible"}`}>
-        <ul className="flex flex-col absolute border rounded w-full">
+        <ul
+          className="flex flex-col absolute border rounded w-full"
+          onKeyDown={onMenuKeyDown}
+        >
           {props.options.map((option, index) => (
             <li key={option}>
               <button
