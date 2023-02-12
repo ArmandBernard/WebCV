@@ -37,9 +37,10 @@ function App() {
   return (
     <div>
       <Select
+        aria-label="select a theme"
         className="absolute right-4 top-4 w-24"
         options={["dark", "light"]}
-        selectedOption={themePreference}
+        selectedOption={themePreference ?? undefined}
         setSelectedOption={setThemePreference}
       />
       <div className="flex justify-center">
