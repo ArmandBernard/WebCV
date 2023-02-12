@@ -36,13 +36,16 @@ function App() {
 
   return (
     <div>
-      <Select
-        aria-label="select a theme"
-        className="absolute right-4 top-4 w-24"
-        options={["dark", "light"]}
-        selectedOption={themePreference ?? undefined}
-        setSelectedOption={setThemePreference}
-      />
+      <label className="absolute right-4 top-4 flex items-baseline gap-2">
+        Theme
+        <Select
+          className="w-20"
+          options={["dark", "light"]}
+          selectedOption={themePreference ?? undefined}
+          setSelectedOption={setThemePreference}
+        />
+      </label>
+
       <div className="flex justify-center">
         <div className="max-w-4xl flex flex-col px-4 flex-grow gap-4 mb-8">
           <h1 className="self-center m-4">Armand Bernard&apos;s Web CV</h1>
