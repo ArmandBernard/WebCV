@@ -3,10 +3,11 @@ import { useOutsideClickHandler } from "./useOutsideClickHandler";
 
 interface SelectProps {
   options: string[];
+  selectedOption: string | null;
+  setSelectedOption: (option: string) => void;
 }
 
 export const Select: FunctionComponent<SelectProps> = (props) => {
-  const [selected, setSelected] = useState<string | null>(null);
   const [open, setOpen] = useState<boolean>(false);
 
   const dropdown = useRef<HTMLDivElement>(null);
@@ -34,7 +35,7 @@ export const Select: FunctionComponent<SelectProps> = (props) => {
   };
 
   const onClickItem = (option: string) => {
-    setSelected(option);
+    props.setSelectedOption(option);
     setOpen(false);
   };
 
@@ -50,7 +51,7 @@ export const Select: FunctionComponent<SelectProps> = (props) => {
         className="p-2 border rounded text-left flex justify-between"
         onClick={onClickExpand}
       >
-        {selected ?? "Select an option"}
+        {props.selectedOption ?? "Select an option"}
         <span>v</span>
       </button>
       <div ref={dropdown} className={`relative ${!open && "invisible"}`}>

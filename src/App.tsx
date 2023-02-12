@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useRef } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { AboutMe } from "./AboutMe";
 import "./App.css";
 import { Education } from "./Education";
@@ -8,6 +8,8 @@ import { useLocalStorage } from "./useLocalStorage";
 
 function App() {
   const htmlRef = useRef(document.documentElement);
+
+  const [selectedTheme, setSelectedTheme] = useState<string | null>("auto");
 
   const getTheme = useCallback(
     () => htmlRef.current.classList.contains("dark"),
@@ -41,7 +43,11 @@ function App() {
 
   return (
     <div>
-      <Select options={["auto", "dark", "light"]} />
+      <Select
+        options={["auto", "dark", "light"]}
+        selectedOption={selectedTheme}
+        setSelectedOption={setSelectedTheme}
+      />
       <button
         className="absolute right-4 top-4"
         onClick={() => setThemePreference(getTheme() ? "light" : "dark")}
