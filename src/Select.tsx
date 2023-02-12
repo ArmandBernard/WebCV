@@ -2,6 +2,7 @@ import { createRef, FunctionComponent, useMemo, useRef, useState } from "react";
 import { useOutsideClickHandler } from "./useOutsideClickHandler";
 
 interface SelectProps {
+  className?: string;
   options: string[];
   selectedOption: string | null;
   setSelectedOption: (option: string) => void;
@@ -46,7 +47,7 @@ export const Select: FunctionComponent<SelectProps> = (props) => {
   };
 
   return (
-    <div className="flex flex-col w-40">
+    <div className={`flex flex-col ${props.className}`}>
       <button
         className="p-2 border rounded text-left flex justify-between gap-2"
         onClick={onClickExpand}
