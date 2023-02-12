@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useId, useRef } from "react";
+import { useCallback, useEffect, useId, useMemo, useRef } from "react";
 import { AboutMe } from "./AboutMe";
 import "./App.css";
 import { Education } from "./Education";
@@ -11,6 +11,18 @@ function App() {
 
   const themePickerLabel = useId();
 
+  const systemPreferredTheme = useMemo(() => {
+    let preference: "dark" | "light" | null = null;
+
+    if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+      preference = "dark";
+    } else if (window.matchMedia("(prefers-color-scheme: light)").matches) {
+      preference = "light";
+    }
+
+    return preference;
+  }, []);
+
   const setTheme = useCallback((dark: boolean) => {
     if (dark) {
       htmlRef.current.classList.add("dark");
@@ -19,22 +31,24 @@ function App() {
     }
   }, []);
 
-  const { get: themePreference, set: setThemePreference } =
-    useLocalStorage("themePreference");
+  const { get: themePreference, set: setThemePreference } = useLocalStorage(
+    "themePreference",
+    "auto"
+  );
 
   useEffect(() => {
     switch (themePreference) {
-      case null:
-        setTheme(window.matchMedia("(prefers-color-scheme: dark)").matches);
-        break;
       case "light":
         setTheme(false);
         break;
       case "dark":
       default:
-        setTheme(true);
+        setTheme(
+          systemPreferredTheme === "dark" || systemPreferredTheme === null
+        );
+        break;
     }
-  }, [setTheme, themePreference]);
+  }, [setTheme, systemPreferredTheme, themePreference]);
 
   return (
     <div>
@@ -43,8 +57,8 @@ function App() {
         <Select
           aria-labelledby={themePickerLabel}
           className="w-20"
-          options={["dark", "light"]}
-          selectedOption={themePreference ?? undefined}
+          options={["auto", "dark", "light"]}
+          selectedOption={themePreference ?? "auto"}
           setSelectedOption={setThemePreference}
         />
       </div>
