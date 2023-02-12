@@ -3,6 +3,7 @@ import { AboutMe } from "./AboutMe";
 import "./App.css";
 import { Education } from "./Education";
 import { Experience } from "./Experience";
+import { Item, Select } from "./Select/Select";
 import { useLocalStorage } from "./useLocalStorage";
 
 function App() {
@@ -40,6 +41,11 @@ function App() {
 
   return (
     <div>
+      <Select label={"Theme"}>
+        <Item key="auto">Auto</Item>
+        <Item key="dark">Dark</Item>
+        <Item key="light">Light</Item>
+      </Select>
       <button
         className="absolute right-4 top-4"
         onClick={() => setThemePreference(getTheme() ? "light" : "dark")}
