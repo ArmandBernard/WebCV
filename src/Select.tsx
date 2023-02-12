@@ -25,14 +25,17 @@ export const Select: FunctionComponent<SelectProps> = (props) => {
   const dropdownRef = useRef<HTMLDivElement>(null);
   const buttonRef = useRef<HTMLButtonElement>(null);
 
+  // close menu and restore focus to the open button
   const onClose = () => {
     setOpen(false);
 
     buttonRef.current?.focus();
   };
 
+  // close the menu when someone clicks outside of it
   useOutsideClickHandler(dropdownRef, onClose);
 
+  // create refs for each item
   const refs = useMemo(
     () =>
       Array.from({ length: props.options.length }).map(() =>
@@ -41,10 +44,12 @@ export const Select: FunctionComponent<SelectProps> = (props) => {
     [props.options]
   );
 
-  const focusItem = (index: number) => {
+  // focus an option by its index
+  const focusOption = (index: number) => {
     refs[index].current?.focus();
   };
 
+  // close the dropdown on focus loss
   const onBlur = (e: React.FocusEvent) => {
     // onBlur can trigger even if the focus has switched to another child
     if (dropdownRef.current?.contains(e.relatedTarget)) {
@@ -54,6 +59,7 @@ export const Select: FunctionComponent<SelectProps> = (props) => {
     setOpen(false);
   };
 
+  // open the menu when the dropdown button is click
   const onClickExpand = () => {
     if (!open) {
       setOpen(true);
@@ -62,15 +68,20 @@ export const Select: FunctionComponent<SelectProps> = (props) => {
         (option) => option === props.selectedOption
       );
 
-      setTimeout(() => focusItem(selectedIndex !== -1 ? selectedIndex : 0), 0);
+      setTimeout(
+        () => focusOption(selectedIndex !== -1 ? selectedIndex : 0),
+        0
+      );
     }
   };
 
+  // select an option on clicking its button
   const onClickItem = (option: string) => {
     props.setSelectedOption(option);
     onClose();
   };
 
+  // handle dropdown menu-wide keypresses
   const onMenuKeyDown = (e: React.KeyboardEvent) => {
     switch (e.key) {
       case "Escape":
@@ -86,7 +97,7 @@ export const Select: FunctionComponent<SelectProps> = (props) => {
           const focusedIndex = refs.findIndex(
             (bRef) => bRef.current === document.activeElement
           );
-          focusItem((focusedIndex + 1) % props.options.length);
+          focusOption((focusedIndex + 1) % props.options.length);
         }
         break;
       case "ArrowUp":
@@ -97,7 +108,7 @@ export const Select: FunctionComponent<SelectProps> = (props) => {
           const focusedIndex = refs.findIndex(
             (bRef) => bRef.current === document.activeElement
           );
-          focusItem((focusedIndex - 1) % props.options.length);
+          focusOption((focusedIndex - 1) % props.options.length);
         }
         break;
     }
