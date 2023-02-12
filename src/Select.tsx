@@ -87,7 +87,7 @@ export const Select: FunctionComponent<SelectProps> = (props) => {
         onClick={onClickExpand}
       >
         {props.selectedOption ?? "Select an option"}
-        <span>v</span>
+        <span className="material-symbols-outlined">arrow_drop_down</span>
       </button>
       <div ref={dropdownRef} className={`relative ${!open && "invisible"}`}>
         <ul
