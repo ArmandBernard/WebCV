@@ -11,6 +11,7 @@ function App() {
 
   const themePickerLabel = useId();
 
+  // determine system theme once on app load
   const systemPreferredTheme = useMemo(() => {
     let preference: "dark" | "light" | null = null;
 
@@ -23,6 +24,7 @@ function App() {
     return preference;
   }, []);
 
+  // set the site theme using a class on the main html element
   const setTheme = useCallback((dark: boolean) => {
     if (dark) {
       htmlRef.current.classList.add("dark");
@@ -31,11 +33,14 @@ function App() {
     }
   }, []);
 
+  // use local storage persisting state for app-level theme preference.
+  // Defaults to system default.
   const { get: themePreference, set: setThemePreference } = useLocalStorage(
     "themePreference",
     "auto"
   );
 
+  // when the themePreference changes, also update the app theme
   useEffect(() => {
     switch (themePreference) {
       case "light":
