@@ -45,11 +45,24 @@ export const Select: FunctionComponent<SelectProps> = (props) => {
     refs[index].current?.focus();
   };
 
+  const onBlur = (e: React.FocusEvent) => {
+    // onBlur can trigger even if the focus has switched to another child
+    if (dropdownRef.current?.contains(e.relatedTarget)) {
+      return;
+    }
+
+    setOpen(false);
+  };
+
   const onClickExpand = () => {
     if (!open) {
       setOpen(true);
 
-      setTimeout(() => focusItem(0), 0);
+      const selectedIndex = props.options.findIndex(
+        (option) => option === props.selectedOption
+      );
+
+      setTimeout(() => focusItem(selectedIndex !== -1 ? selectedIndex : 0), 0);
     }
   };
 
@@ -114,7 +127,7 @@ export const Select: FunctionComponent<SelectProps> = (props) => {
           className="flex flex-col absolute border border-neutral-400 dark:border-white rounded w-full"
           onKeyDown={onMenuKeyDown}
           role="listbox"
-          onBlur={() => setOpen(false)}
+          onBlur={onBlur}
         >
           {props.options.map((option, index) => (
             <button
