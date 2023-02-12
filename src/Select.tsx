@@ -11,6 +11,8 @@ export const Select: FunctionComponent<SelectProps> = (props) => {
 
   const dropdown = useRef<HTMLDivElement>(null);
 
+  useOutsideClickHandler(dropdown, () => setOpen(false));
+
   const refs = useMemo(
     () =>
       Array.from({ length: props.options.length }).map(() =>
