@@ -123,7 +123,8 @@ export const Select: FunctionComponent<SelectProps> = (props) => {
         aria-expanded={open}
         role="combobox"
         ref={buttonRef}
-        className="p-2 border border-neutral-400 dark:border-white rounded text-left flex justify-between gap-2"
+        className={`p-2 border items-center border-neutral-400 dark:border-white rounded 
+          text-left flex justify-between gap-2`}
         onClick={onClickExpand}
         value={props.selectedOption}
       >
@@ -135,7 +136,8 @@ export const Select: FunctionComponent<SelectProps> = (props) => {
           id={listBoxId}
           aria-label={props["aria-label"]}
           aria-labelledby={props["aria-labelledby"]}
-          className="flex flex-col absolute border border-neutral-400 dark:border-white rounded w-full"
+          className={`flex flex-col absolute border bg-background border-neutral-400 dark:border-white 
+            rounded w-full`}
           role="listbox"
           onBlur={onBlur}
           onKeyDown={onMenuKeyDown}
