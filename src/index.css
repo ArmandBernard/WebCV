@@ -22,17 +22,19 @@
   }
 
   body {
-    @apply bg-white text-black dark:bg-neutral-800 dark:text-white;
+    @apply bg-background  text-black  dark:text-white;
     @apply max-sm:text-sm;
   }
 
   html:not(.dark) {
+    --background: white;
     --primary: #0ea5e9; /* sky-500 */
     --tag-background: #bae6fd; /* sky-200 */
     --grade: #d4d4d4; /* neutral-300 */
   }
 
   html.dark {
+    --background: #262626;
     --primary: #38bdf8; /* sky-400 */
     --tag-background: #0369a1; /* sky-700 */
     --grade: #525252; /* neutral-600 */

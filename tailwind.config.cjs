@@ -9,6 +9,7 @@ module.exports = {
     },
     extend: {
       colors: {
+        background: "var(--background)",
         primary: "var(--primary)",
         "tag-background": "var(--tag-background)",
         grade: "var(--grade)",
