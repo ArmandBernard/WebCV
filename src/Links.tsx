@@ -26,6 +26,7 @@ export const Links = () => {
         <a
           href="mailto:armandbernard1995@gmail.com"
           className="flex items-center h-16 w-16"
+          aria-label="Send Email"
         >
           <span className="material-symbols-outlined text-[4rem] leading-none text-text-color">
             alternate_email
