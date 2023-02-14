@@ -22,11 +22,12 @@
   }
 
   body {
-    @apply bg-background text-black dark:text-white;
+    @apply bg-background text-text-color;
     @apply max-sm:text-sm;
   }
 
   html:not(.dark) {
+    --text-color: black;
     --background: white;
     --primary: #0ea5e9; /* sky-500 */
     --tag-background: #bae6fd; /* sky-200 */
@@ -34,6 +35,7 @@
   }
 
   html.dark {
+    --text-color: white;
     --background: #262626;
     --primary: #38bdf8; /* sky-400 */
     --tag-background: #0369a1; /* sky-700 */
