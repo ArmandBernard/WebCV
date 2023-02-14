@@ -136,8 +136,8 @@ export const Select: FunctionComponent<SelectProps> = (props) => {
           id={listBoxId}
           aria-label={props["aria-label"]}
           aria-labelledby={props["aria-labelledby"]}
-          className={`flex flex-col absolute border bg-background border-neutral-400 dark:border-white 
-            rounded w-full`}
+          className={`flex flex-col absolute border bg-background border-neutral-400 
+          dark:border-white rounded w-full`}
           role="listbox"
           onBlur={onBlur}
           onKeyDown={onMenuKeyDown}

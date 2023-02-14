@@ -57,11 +57,15 @@ function App() {
 
   return (
     <div className="flex flex-col gap-4">
-      <div className="m-4 sm:grid sm:grid-cols-[1fr_auto_1fr] max-sm:flex max-sm:justify-between max-sm: gap-2 items-center">
+      <div
+        className={`m-4 gap-2 items-center sm:grid sm:grid-cols-[1fr_auto_1fr] 
+          max-sm:flex max-sm:justify-between`}
+      >
         <h1 className="col-start-2">Armand Bernard&apos;s Web CV</h1>
         <div className="justify-self-end flex grid-col items-baseline gap-2 relative">
           <label
-            className="max-sm:text-xs max-sm:absolute max-sm:px-1 max-sm:left-1 max-sm:top-[-0.5rem] max-sm:bg-background"
+            className={`max-sm:text-xs max-sm:absolute max-sm:px-1 max-sm:left-1 
+              max-sm:top-[-0.5rem] max-sm:bg-background`}
             id={themePickerLabel}
           >
             Theme

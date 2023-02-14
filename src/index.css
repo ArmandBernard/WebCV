@@ -22,7 +22,7 @@
   }
 
   body {
-    @apply bg-background  text-black  dark:text-white;
+    @apply bg-background text-black dark:text-white;
     @apply max-sm:text-sm;
   }
 
