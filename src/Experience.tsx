@@ -3,7 +3,7 @@ import { Timeline } from "./Timeline";
 import { TimelineSegment } from "./TimelineSegment";
 
 export const Experience = () => (
-  <>
+  <div className="break-before">
     <h2>Experience</h2>
     <Timeline>
       <TimelineSegment timelineText="Present">
@@ -247,5 +247,5 @@ export const Experience = () => (
         <i>University started</i>
       </TimelineSegment>
     </Timeline>
-  </>
+  </div>
 );

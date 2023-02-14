@@ -5,7 +5,7 @@ export const Links = () => {
   const theme = useContext(ThemeContext);
 
   return (
-    <>
+    <div>
       <h2>Links</h2>
       <div className="flex items-center gap-2">
         <LinkImage
@@ -33,7 +33,7 @@ export const Links = () => {
           </span>
         </a>
       </div>
-    </>
+    </div>
   );
 };
 

@@ -70,7 +70,7 @@ function App() {
 
   return (
     <ThemeContext.Provider value={activeTheme}>
-      <div className="flex flex-col gap-4">
+      <div className="space-y-4">
         <div
           className={`m-4 gap-2 items-center sm:grid sm:grid-cols-[1fr_auto_1fr] 
           max-sm:flex max-sm:justify-between`}
@@ -104,7 +104,7 @@ function App() {
         </div>
 
         <div className="flex justify-center">
-          <main className="max-w-4xl flex flex-col px-4 flex-grow gap-4 mb-8">
+          <main className="max-w-4xl px-4 flex-grow space-y-4 mb-8">
             <AboutMe />
             <Experience />
             <Education />
