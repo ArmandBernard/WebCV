@@ -76,21 +76,30 @@ function App() {
           max-sm:flex max-sm:justify-between`}
         >
           <h1 className="col-start-2">Armand Bernard&apos;s Web CV</h1>
-          <div className="justify-self-end flex grid-col items-baseline gap-2 relative">
-            <label
-              className={`max-sm:text-xs max-sm:absolute max-sm:px-1 max-sm:left-1 
+          <div className="justify-self-end flex items-center gap-2">
+            <div className="flex items-baseline gap-2 relative">
+              <label
+                className={`max-sm:text-xs max-sm:absolute max-sm:px-1 max-sm:left-1 
               max-sm:top-[-0.5rem] max-sm:bg-background`}
-              id={themePickerLabel}
+                id={themePickerLabel}
+              >
+                Theme
+              </label>
+
+              <Select
+                aria-labelledby={themePickerLabel}
+                className="sm:w-20"
+                options={["auto", "dark", "light"]}
+                selectedOption={themePreference ?? "auto"}
+                setSelectedOption={setThemePreference}
+              />
+            </div>
+            <button
+              className="material-symbols-outlined text-4xl"
+              onClick={() => window.print()}
             >
-              Theme
-            </label>
-            <Select
-              aria-labelledby={themePickerLabel}
-              className="sm:w-20"
-              options={["auto", "dark", "light"]}
-              selectedOption={themePreference ?? "auto"}
-              setSelectedOption={setThemePreference}
-            />
+              print
+            </button>
           </div>
         </div>
 
