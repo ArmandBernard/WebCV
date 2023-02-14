@@ -11,7 +11,7 @@ export const Links = () => {
         <LinkImage
           href="https://www.linkedin.com/in/armand-bernard-8605b8b1/"
           alt="LinkedIn profile"
-          src="./LinkedInLogo.svg"
+          src="./linked-in.svg"
         />
         <LinkImage
           href="https://github.com/ArmandBernard"
@@ -25,7 +25,7 @@ export const Links = () => {
         />
         <a
           href="mailto:armandbernard1995@gmail.com"
-          className="flex items-center"
+          className="flex items-center h-16 w-16"
         >
           <span className="material-symbols-outlined text-[4rem] leading-none text-text-color">
             alternate_email
@@ -41,7 +41,7 @@ const LinkImage: FunctionComponent<{
   alt: string;
   src: string;
 }> = ({ href, alt, src }) => (
-  <a href={href}>
-    <img className="h-16" alt={alt} src={src} />
+  <a href={href} className="flex items-center justify-center h-16 w-16">
+    <img alt={alt} src={src} />
   </a>
 );
