@@ -26,6 +26,14 @@
     @apply max-sm:text-sm;
   }
 
+  .break-before {
+    break-before: page;
+  }
+
+  .break-after {
+    break-after: page;
+  }
+
   html:not(.dark) {
     --text-color: black;
     --background: white;
