@@ -3,6 +3,7 @@ import { AboutMe } from "./AboutMe";
 import "./App.css";
 import { Education } from "./Education";
 import { Experience } from "./Experience";
+import { Links } from "./Links";
 import { Select } from "./Select";
 import { useLocalStorage } from "./useLocalStorage";
 
@@ -85,6 +86,7 @@ function App() {
           <AboutMe />
           <Experience />
           <Education />
+          <Links />
         </main>
       </div>
     </div>
