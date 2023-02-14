@@ -33,7 +33,7 @@ export const Select: FunctionComponent<SelectProps> = (props) => {
   };
 
   // close the menu when someone clicks outside of it
-  useOutsideClickHandler(dropdownRef, onClose);
+  useOutsideClickHandler(dropdownRef, () => setOpen(false));
 
   // create refs for each item
   const refs = useMemo(
