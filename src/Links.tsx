@@ -18,6 +18,11 @@ export const Links = () => {
           alt="GitHub Profile"
           src={theme === "dark" ? "./github-white.svg" : "./github.svg"}
         />
+        <LinkImage
+          href="https://stackoverflow.com/users/5706830/armand-bernard"
+          alt="Stack Overflow Profile"
+          src="./stack-overflow.svg"
+        />
         <a
           href="mailto:armandbernard1995@gmail.com"
           className="flex items-center"
