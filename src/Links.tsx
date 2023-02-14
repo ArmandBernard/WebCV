@@ -7,17 +7,14 @@ export const Links = () => {
   return (
     <>
       <h2>Links</h2>
-      <div className="flex">
-        <a href="https://www.linkedin.com/in/armand-bernard-8605b8b1/">
-          <img
-            className="h-16"
+      <div className="flex items-center gap-2">
+        <LinkImage
+          href="https://www.linkedin.com/in/armand-bernard-8605b8b1/"
             alt="LinkedIn profile"
             src="./LinkedInLogo.svg"
           />
-        </a>
-        <a href="https://github.com/ArmandBernard">
-          <img
-            className="h-16"
+        <LinkImage
+          href="https://github.com/ArmandBernard"
             alt="GitHub Profile"
             src={theme === "dark" ? "./github-white.svg" : "./github.svg"}
           />
@@ -26,3 +23,13 @@ export const Links = () => {
     </>
   );
 };
+
+const LinkImage: FunctionComponent<{
+  href: string;
+  alt: string;
+  src: string;
+}> = ({ href, alt, src }) => (
+  <a href={href}>
+    <img className="h-16" alt={alt} src={src} />
+  </a>
+);
