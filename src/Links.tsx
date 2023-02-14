@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { FunctionComponent, useContext } from "react";
 import { ThemeContext } from "./ThemeContext";
 
 export const Links = () => {
@@ -10,14 +10,21 @@ export const Links = () => {
       <div className="flex items-center gap-2">
         <LinkImage
           href="https://www.linkedin.com/in/armand-bernard-8605b8b1/"
-            alt="LinkedIn profile"
-            src="./LinkedInLogo.svg"
-          />
+          alt="LinkedIn profile"
+          src="./LinkedInLogo.svg"
+        />
         <LinkImage
           href="https://github.com/ArmandBernard"
-            alt="GitHub Profile"
-            src={theme === "dark" ? "./github-white.svg" : "./github.svg"}
-          />
+          alt="GitHub Profile"
+          src={theme === "dark" ? "./github-white.svg" : "./github.svg"}
+        />
+        <a
+          href="mailto:armandbernard1995@gmail.com"
+          className="flex items-center"
+        >
+          <span className="material-symbols-outlined text-[4rem] leading-none text-text-color">
+            alternate_email
+          </span>
         </a>
       </div>
     </>
