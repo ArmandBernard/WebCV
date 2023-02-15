@@ -34,19 +34,31 @@
     break-after: page;
   }
 
-  html:not(.dark) {
-    --text-color: black;
-    --background: white;
-    --primary: #0ea5e9; /* sky-500 */
-    --tag-background: #bae6fd; /* sky-200 */
-    --grade: #d4d4d4; /* neutral-300 */
+  @media not print {
+    html:not(.dark) {
+      --text-color: black;
+      --background: white;
+      --primary: #0ea5e9; /* sky-500 */
+      --tag-background: #bae6fd; /* sky-200 */
+      --grade: #d4d4d4; /* neutral-300 */
+    }
+
+    html.dark {
+      --text-color: white;
+      --background: #262626;
+      --primary: #38bdf8; /* sky-400 */
+      --tag-background: #0369a1; /* sky-700 */
+      --grade: #525252; /* neutral-600 */
+    }
   }
 
-  html.dark {
-    --text-color: white;
-    --background: #262626;
-    --primary: #38bdf8; /* sky-400 */
-    --tag-background: #0369a1; /* sky-700 */
-    --grade: #525252; /* neutral-600 */
+  @media print {
+    html {
+      --text-color: black;
+      --background: white;
+      --primary: #0ea5e9; /* sky-500 */
+      --tag-background: #bae6fd; /* sky-200 */
+      --grade: #d4d4d4; /* neutral-300 */
+    }
   }
 }
