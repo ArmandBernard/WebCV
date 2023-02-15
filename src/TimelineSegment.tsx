@@ -11,7 +11,7 @@ export const TimelineSegment: FunctionComponent<TimelineSegmentProps> = (
   <>
     <span
       className={`inline-block h-4 w-4 ml-[calc(-0.5rem-2px)] mt-1 rounded-full 
-                  bg-primary align-middle`}
+                  bg-primary align-middle print-exact`}
     />
     <div>{props.timelineText}</div>
     <div>{props.children}</div>
