@@ -16,6 +16,11 @@ import { ThemeContext } from "./ThemeContext";
 import { useLocalStorage } from "./useLocalStorage";
 
 function App() {
+  const isAndroid = useMemo(
+    () => navigator.userAgent.toLowerCase().includes("android"),
+    []
+  );
+
   const htmlRef = useRef(document.documentElement);
 
   const themePickerLabel = useId();
@@ -70,32 +75,40 @@ function App() {
 
   return (
     <ThemeContext.Provider value={activeTheme}>
-      <div className="flex flex-col gap-4">
-        <div
-          className={`m-4 gap-2 items-center sm:grid sm:grid-cols-[1fr_auto_1fr] 
-          max-sm:flex max-sm:justify-between`}
-        >
-          <h1 className="col-start-2">Armand Bernard&apos;s Web CV</h1>
-          <div className="justify-self-end flex grid-col items-baseline gap-2 relative">
-            <label
-              className={`max-sm:text-xs max-sm:absolute max-sm:px-1 max-sm:left-1 
-              max-sm:top-[-0.5rem] max-sm:bg-background`}
-              id={themePickerLabel}
-            >
-              Theme
-            </label>
-            <Select
-              aria-labelledby={themePickerLabel}
-              className="sm:w-20"
-              options={["auto", "dark", "light"]}
-              selectedOption={themePreference ?? "auto"}
-              setSelectedOption={setThemePreference}
-            />
-          </div>
-        </div>
+      <div className="flex items-center gap-2 fixed sm:top-0 right-0 max-sm:bottom-0 print:invisible p-4">
+        <div className="flex items-baseline gap-2 relative">
+          <label
+            className={`max-sm:text-xs max-sm:absolute py-1 px-1 max-sm:left-1 rounded
+              max-sm:top-[-0.75rem] bg-background`}
+            id={themePickerLabel}
+          >
+            Theme
+          </label>
 
+          <Select
+            position={
+              document.documentElement.clientWidth < 640 ? "top" : "bottom"
+            }
+            aria-labelledby={themePickerLabel}
+            className="sm:w-20"
+            options={["auto", "dark", "light"]}
+            selectedOption={themePreference ?? "auto"}
+            setSelectedOption={setThemePreference}
+          />
+        </div>
+        {!isAndroid && (
+          <button
+            className="material-symbols-outlined text-4xl bg-background rounded-full"
+            onClick={() => window.print()}
+          >
+            print
+          </button>
+        )}
+      </div>
+      <div className="space-y-4">
         <div className="flex justify-center">
-          <main className="max-w-4xl flex flex-col px-4 flex-grow gap-4 mb-8">
+          <main className="max-w-4xl px-4 flex-grow space-y-4 mb-8">
+            <h1 className="text-center mt-6">Armand Bernard&apos;s Web CV</h1>
             <AboutMe />
             <Experience />
             <Education />
@@ -103,6 +116,12 @@ function App() {
           </main>
         </div>
       </div>
+      <footer className="invisible print:visible fixed bottom-0 py-2 px-4 bg-background">
+        This CV was obtained from{" "}
+        <a href="https://armandbernard.github.io/WebCV/">
+          https://armandbernard.github.io/WebCV/
+        </a>
+      </footer>
     </ThemeContext.Provider>
   );
 }

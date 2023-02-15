@@ -5,7 +5,7 @@ interface TagProps {
 }
 
 export const Tag: FunctionComponent<TagProps> = (props) => (
-  <span className="bg-tag-background px-2 rounded-full text-sm max-sm:text-xs">
+  <span className="bg-tag-background px-2 rounded-full text-sm max-sm:text-xs print-exact">
     {props.children}
   </span>
 );
