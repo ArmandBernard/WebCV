@@ -71,30 +71,33 @@ function App() {
   return (
     <ThemeContext.Provider value={activeTheme}>
       <div className="flex items-center gap-2 fixed sm:top-0 right-0 max-sm:bottom-0 print:invisible p-4">
-            <div className="flex items-baseline gap-2 relative">
-              <label
+        <div className="flex items-baseline gap-2 relative">
+          <label
             className={`max-sm:text-xs max-sm:absolute py-1 px-1 max-sm:left-1 rounded
               max-sm:top-[-0.75rem] bg-background`}
-                id={themePickerLabel}
-              >
-                Theme
-              </label>
+            id={themePickerLabel}
+          >
+            Theme
+          </label>
 
-              <Select
-                aria-labelledby={themePickerLabel}
-                className="sm:w-20"
-                options={["auto", "dark", "light"]}
-                selectedOption={themePreference ?? "auto"}
-                setSelectedOption={setThemePreference}
-              />
-            </div>
-            <button
+          <Select
+            position={
+              document.documentElement.clientWidth < 640 ? "top" : "bottom"
+            }
+            aria-labelledby={themePickerLabel}
+            className="sm:w-20"
+            options={["auto", "dark", "light"]}
+            selectedOption={themePreference ?? "auto"}
+            setSelectedOption={setThemePreference}
+          />
+        </div>
+        <button
           className="material-symbols-outlined text-4xl bg-background rounded-full"
-              onClick={() => window.print()}
-            >
-              print
-            </button>
-          </div>
+          onClick={() => window.print()}
+        >
+          print
+        </button>
+      </div>
       <div className="space-y-4">
         <div className="flex justify-center">
           <main className="max-w-4xl px-4 flex-grow space-y-4 mb-8">

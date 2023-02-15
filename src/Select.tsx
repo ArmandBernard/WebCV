@@ -11,6 +11,7 @@ import { useOutsideClickHandler } from "./useOutsideClickHandler";
 interface SelectProps {
   "aria-label"?: string;
   "aria-labelledby"?: string;
+  position?: "top" | "bottom";
   className?: string;
   options: string[];
   selectedOption: string | undefined;
@@ -115,7 +116,11 @@ export const Select: FunctionComponent<SelectProps> = (props) => {
   };
 
   return (
-    <div className={`flex flex-col ${props.className}`}>
+    <div
+      className={`flex ${
+        props.position === "top" ? "flex-col-reverse" : "flex-col"
+      } ${props.className}`}
+    >
       <button
         aria-label={props["aria-label"]}
         aria-labelledby={props["aria-labelledby"]}
@@ -123,8 +128,8 @@ export const Select: FunctionComponent<SelectProps> = (props) => {
         aria-expanded={open}
         role="combobox"
         ref={buttonRef}
-        className={`p-2 border items-center border-neutral-400 dark:border-white rounded 
-          text-left flex justify-between gap-2`}
+        className={`p-2 border items-center bg-background border-neutral-400 dark:border-white 
+          rounded text-left flex justify-between gap-2`}
         onClick={onClickExpand}
         value={props.selectedOption}
       >
@@ -136,8 +141,10 @@ export const Select: FunctionComponent<SelectProps> = (props) => {
           id={listBoxId}
           aria-label={props["aria-label"]}
           aria-labelledby={props["aria-labelledby"]}
-          className={`flex flex-col absolute border bg-background border-neutral-400 
-          dark:border-white rounded w-full`}
+          className={`flex flex-col absolute border ${
+            props.position === "top" && "translate-y-[-100%]"
+          } bg-background border-neutral-400 
+            dark:border-white rounded w-full`}
           role="listbox"
           onBlur={onBlur}
           onKeyDown={onMenuKeyDown}
