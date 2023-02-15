@@ -1,9 +1,6 @@
-import { FunctionComponent, useContext } from "react";
-import { ThemeContext } from "./ThemeContext";
+import { FunctionComponent } from "react";
 
 export const Links = () => {
-  const theme = useContext(ThemeContext);
-
   return (
     <div>
       <h2>Links</h2>
@@ -14,9 +11,16 @@ export const Links = () => {
           src="./linked-in.svg"
         />
         <LinkImage
+          className="dark:collapse print:dark:visible"
           href="https://github.com/ArmandBernard"
           alt="GitHub Profile"
-          src={theme === "dark" ? "./github-white.svg" : "./github.svg"}
+          src="./github.svg"
+        />
+        <LinkImage
+          className="collapse dark:visible print:dark:collapse"
+          href="https://github.com/ArmandBernard"
+          alt="GitHub Profile"
+          src="./github-white.svg"
         />
         <LinkImage
           href="https://stackoverflow.com/users/5706830/armand-bernard"
@@ -41,8 +45,12 @@ const LinkImage: FunctionComponent<{
   href: string;
   alt: string;
   src: string;
-}> = ({ href, alt, src }) => (
-  <a href={href} className="flex items-center justify-center h-16 w-16">
+  className?: string;
+}> = ({ className, href, alt, src }) => (
+  <a
+    href={href}
+    className={`flex items-center justify-center h-16 w-16 ${className}`}
+  >
     <img alt={alt} src={src} />
   </a>
 );
