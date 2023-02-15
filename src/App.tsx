@@ -16,6 +16,11 @@ import { ThemeContext } from "./ThemeContext";
 import { useLocalStorage } from "./useLocalStorage";
 
 function App() {
+  const isAndroid = useMemo(
+    () => navigator.userAgent.toLowerCase().includes("android"),
+    []
+  );
+
   const htmlRef = useRef(document.documentElement);
 
   const themePickerLabel = useId();
@@ -91,12 +96,14 @@ function App() {
             setSelectedOption={setThemePreference}
           />
         </div>
-        <button
-          className="material-symbols-outlined text-4xl bg-background rounded-full"
-          onClick={() => window.print()}
-        >
-          print
-        </button>
+        {!isAndroid && (
+          <button
+            className="material-symbols-outlined text-4xl bg-background rounded-full"
+            onClick={() => window.print()}
+          >
+            print
+          </button>
+        )}
       </div>
       <div className="space-y-4">
         <div className="flex justify-center">
