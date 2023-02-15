@@ -112,6 +112,12 @@ function App() {
           </main>
         </div>
       </div>
+      <footer className="invisible print:visible fixed bottom-0 py-2 px-4 bg-background">
+        This CV was obtained from{" "}
+        <a href="https://armandbernard.github.io/WebCV/">
+          https://armandbernard.github.io/WebCV/
+        </a>
+      </footer>
     </ThemeContext.Provider>
   );
 }
