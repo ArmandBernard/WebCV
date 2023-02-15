@@ -70,17 +70,11 @@ function App() {
 
   return (
     <ThemeContext.Provider value={activeTheme}>
-      <div className="space-y-4">
-        <div
-          className={`m-4 gap-2 items-center sm:grid sm:grid-cols-[1fr_auto_1fr] 
-          max-sm:flex max-sm:justify-between`}
-        >
-          <h1 className="col-start-2">Armand Bernard&apos;s Web CV</h1>
-          <div className="justify-self-end flex items-center gap-2 print:invisible">
+      <div className="flex items-center gap-2 fixed sm:top-0 right-0 max-sm:bottom-0 print:invisible p-4">
             <div className="flex items-baseline gap-2 relative">
               <label
-                className={`max-sm:text-xs max-sm:absolute max-sm:px-1 max-sm:left-1 
-              max-sm:top-[-0.5rem] max-sm:bg-background`}
+            className={`max-sm:text-xs max-sm:absolute py-1 px-1 max-sm:left-1 rounded
+              max-sm:top-[-0.75rem] bg-background`}
                 id={themePickerLabel}
               >
                 Theme
@@ -95,16 +89,16 @@ function App() {
               />
             </div>
             <button
-              className="material-symbols-outlined text-4xl"
+          className="material-symbols-outlined text-4xl bg-background rounded-full"
               onClick={() => window.print()}
             >
               print
             </button>
           </div>
-        </div>
-
+      <div className="space-y-4">
         <div className="flex justify-center">
           <main className="max-w-4xl px-4 flex-grow space-y-4 mb-8">
+            <h1 className="text-center mt-6">Armand Bernard&apos;s Web CV</h1>
             <AboutMe />
             <Experience />
             <Education />
