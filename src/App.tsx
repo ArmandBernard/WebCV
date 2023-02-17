@@ -19,19 +19,24 @@ import { useSystemPreferredTheme } from "./useSystemPreferredTheme";
 import { useWindowWidth } from "./useWindowWidth";
 
 function App() {
+  const htmlRef = useRef(document.documentElement);
+  const themePickerLabel = useId();
+  const [activeTheme, setActiveTheme] = useState<"dark" | "light">("dark");
+
+  // use local storage persisting state for app-level theme preference.
+  // Defaults to system default.
+  const [themePreference, setThemePreference] = useLocalStorage(
+    "themePreference",
+    "auto"
+  );
+
+  const windowWidth = useDeferredValue(useWindowWidth());
+  const systemPreferredTheme = useSystemPreferredTheme();
+
   const isAndroid = useMemo(
     () => navigator.userAgent.toLowerCase().includes("android"),
     []
   );
-
-  const windowWidth = useDeferredValue(useWindowWidth());
-
-  const htmlRef = useRef(document.documentElement);
-
-  const themePickerLabel = useId();
-
-  // determine system theme once on app load
-  const systemPreferredTheme = useSystemPreferredTheme();
 
   // set the site theme using a class on the main html element
   const setTheme = useCallback((dark: boolean) => {
@@ -43,15 +48,6 @@ function App() {
       htmlRef.current.classList.remove("dark");
     }
   }, []);
-
-  const [activeTheme, setActiveTheme] = useState<"dark" | "light">("dark");
-
-  // use local storage persisting state for app-level theme preference.
-  // Defaults to system default.
-  const [themePreference, setThemePreference] = useLocalStorage(
-    "themePreference",
-    "auto"
-  );
 
   // when the themePreference changes, also update the app theme
   useEffect(() => {
