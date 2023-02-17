@@ -14,12 +14,15 @@ import { Links } from "./Links";
 import { Select } from "./Select";
 import { ThemeContext } from "./ThemeContext";
 import { useLocalStorage } from "./useLocalStorage";
+import { useWindowWidth } from "./useWindowWidth";
 
 function App() {
   const isAndroid = useMemo(
     () => navigator.userAgent.toLowerCase().includes("android"),
     []
   );
+
+  const windowWidth = useWindowWidth();
 
   const htmlRef = useRef(document.documentElement);
 
@@ -86,9 +89,7 @@ function App() {
           </label>
 
           <Select
-            position={
-              document.documentElement.clientWidth < 640 ? "top" : "bottom"
-            }
+            position={windowWidth < 640 ? "top" : "bottom"}
             aria-labelledby={themePickerLabel}
             className="sm:w-20"
             options={["auto", "dark", "light"]}
