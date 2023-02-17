@@ -1,5 +1,6 @@
 import {
   useCallback,
+  useDeferredValue,
   useEffect,
   useId,
   useMemo,
@@ -22,7 +23,7 @@ function App() {
     []
   );
 
-  const windowWidth = useWindowWidth();
+  const windowWidth = useDeferredValue(useWindowWidth());
 
   const htmlRef = useRef(document.documentElement);
 
