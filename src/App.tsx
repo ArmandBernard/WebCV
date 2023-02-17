@@ -15,6 +15,7 @@ import { Links } from "./Links";
 import { Select } from "./Select";
 import { ThemeContext } from "./ThemeContext";
 import { useLocalStorage } from "./useLocalStorage";
+import { useSystemPreferredTheme } from "./useSystemPreferredTheme";
 import { useWindowWidth } from "./useWindowWidth";
 
 function App() {
@@ -30,17 +31,7 @@ function App() {
   const themePickerLabel = useId();
 
   // determine system theme once on app load
-  const systemPreferredTheme = useMemo(() => {
-    let preference: "dark" | "light" | null = null;
-
-    if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
-      preference = "dark";
-    } else if (window.matchMedia("(prefers-color-scheme: light)").matches) {
-      preference = "light";
-    }
-
-    return preference;
-  }, []);
+  const systemPreferredTheme = useSystemPreferredTheme();
 
   // set the site theme using a class on the main html element
   const setTheme = useCallback((dark: boolean) => {
