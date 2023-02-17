@@ -11,13 +11,13 @@ export const Links = () => {
           src="./linked-in.svg"
         />
         <LinkImage
-          className="dark:collapse print:dark:visible"
+          className="dark:hidden print:dark:flex"
           href="https://github.com/ArmandBernard"
           alt="GitHub Profile"
           src="./github.svg"
         />
         <LinkImage
-          className="collapse dark:visible print:dark:collapse"
+          className="hidden dark:flex print:dark:hidden"
           href="https://github.com/ArmandBernard"
           alt="GitHub Profile"
           src="./github-white.svg"
