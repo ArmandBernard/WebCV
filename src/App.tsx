@@ -67,7 +67,7 @@ function App() {
 
   return (
     <ThemeContext.Provider value={activeTheme}>
-      <div className="flex items-center gap-2 fixed sm:top-0 right-0 max-sm:bottom-0 print:invisible p-4">
+      <div className="flex items-center gap-4 fixed sm:top-0 right-0 max-sm:bottom-0 print:invisible p-4">
         <div className="flex items-baseline gap-2 relative">
           <label
             className={`max-sm:text-sm max-sm:absolute py-1 px-2 max-sm:left-2 rounded
@@ -103,7 +103,7 @@ function App() {
           </button>
         )}
       </div>
-      <div className="space-y-4">
+      <div className="space-y-4 max-sm:mb-16">
         <div className="flex justify-center">
           <main className="max-w-4xl px-4 flex-grow space-y-4 mb-8">
             <h1 className="text-center mt-6">Armand Bernard&apos;s Web CV</h1>
