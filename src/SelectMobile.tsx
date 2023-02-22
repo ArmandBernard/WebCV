@@ -133,6 +133,8 @@ export const SelectMobile: FunctionComponent<SelectProps> = (props) => {
         <span className="material-symbols-outlined">arrow_drop_down</span>
       </button>
       <Dialog
+        aria-label={props["aria-label"]}
+        aria-labelledby={props["aria-labelledby"]}
         show={open}
         className={`p-0 w-full fixed bottom-4 top-auto bg-background text-text-color text-base
           border border-neutral-400 dark:border-white rounded`}
