@@ -1,18 +1,18 @@
 import { FunctionComponent, RefObject, useId, useState } from "react";
-import { Dialog } from "./Dialog";
-import { useOutsideClickHandler } from "./useOutsideClickHandler";
+import { useOutsideClickHandler } from "../useOutsideClickHandler";
 import { useSelect } from "./useSelect";
 
 interface SelectProps {
   "aria-label"?: string;
   "aria-labelledby"?: string;
+  position?: "top" | "bottom";
   className?: string;
   options: string[];
   selectedOption: string | undefined;
   setSelectedOption: (option: string) => void;
 }
 
-export const SelectMobile: FunctionComponent<SelectProps> = (props) => {
+export const Select: FunctionComponent<SelectProps> = (props) => {
   const { selectedOption, setSelectedOption } = props;
 
   const [open, setOpen] = useState<boolean>(false);
@@ -39,7 +39,11 @@ export const SelectMobile: FunctionComponent<SelectProps> = (props) => {
   useOutsideClickHandler(dropdownRef, () => setOpen(false));
 
   return (
-    <div className={`flex ${props.className}`}>
+    <div
+      className={`flex ${
+        props.position === "top" ? "flex-col-reverse" : "flex-col"
+      } ${props.className}`}
+    >
       <button
         aria-label={props["aria-label"]}
         aria-labelledby={props["aria-labelledby"]}
@@ -47,27 +51,26 @@ export const SelectMobile: FunctionComponent<SelectProps> = (props) => {
         aria-expanded={open}
         role="combobox"
         ref={buttonRef}
-        className={`p-4 border items-center bg-background border-neutral-400 dark:border-white 
-            rounded text-left flex justify-between gap-4 text-base`}
+        className={`p-2 border items-center bg-background border-neutral-400 dark:border-white 
+          rounded text-left flex justify-between gap-2`}
         onClick={onClickExpand}
         value={props.selectedOption}
       >
         {props.selectedOption ?? "Select an option"}
         <span className="material-symbols-outlined">arrow_drop_down</span>
       </button>
-      <Dialog
-        aria-label={props["aria-label"]}
-        aria-labelledby={props["aria-labelledby"]}
-        show={open}
-        className={`p-0 w-full fixed bottom-4 top-auto bg-background text-text-color text-base
-          border border-neutral-400 dark:border-white rounded`}
-        ref={dropdownRef as RefObject<HTMLDialogElement>}
+      <div
+        ref={dropdownRef as RefObject<HTMLDivElement>}
+        className={`relative ${!open && "invisible"}`}
       >
         <div
           id={listBoxId}
           aria-label={props["aria-label"]}
           aria-labelledby={props["aria-labelledby"]}
-          className="flex flex-col"
+          className={`flex flex-col absolute border ${
+            props.position === "top" && "translate-y-[-100%]"
+          } bg-background border-neutral-400 
+            dark:border-white rounded w-full`}
           role="listbox"
           onBlur={onBlur}
           onKeyDown={onMenuKeyDown}
@@ -83,7 +86,7 @@ export const SelectMobile: FunctionComponent<SelectProps> = (props) => {
                 tabIndex={-1}
                 ref={optionRefs[index]}
                 className={
-                  "p-4 flex items-baseline justify-between w-full text-left whitespace-nowrap"
+                  "p-2 flex items-baseline justify-between w-full text-left whitespace-nowrap"
                 }
                 onClick={() => onClickItem(option)}
               >
@@ -100,7 +103,7 @@ export const SelectMobile: FunctionComponent<SelectProps> = (props) => {
             );
           })}
         </div>
-      </Dialog>
+      </div>
     </div>
   );
 };

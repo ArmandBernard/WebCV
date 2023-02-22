@@ -1,6 +1,6 @@
 import { FunctionComponent, useDeferredValue, useId, useMemo } from "react";
-import { Select } from "./Select";
-import { SelectMobile } from "./SelectMobile";
+import { Select } from "./Select/Select";
+import { SelectMobile } from "./Select/SelectMobile";
 import { useWindowWidth } from "./useWindowWidth";
 
 export const PageControls: FunctionComponent<{
