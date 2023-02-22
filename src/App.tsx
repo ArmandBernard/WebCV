@@ -78,6 +78,7 @@ function App() {
           </label>
           {windowWidth < 640 ? (
             <SelectMobile
+              className="shadow-lg"
               aria-labelledby={themePickerLabel}
               options={["auto", "dark", "light"]}
               selectedOption={themePreference ?? "auto"}
@@ -96,7 +97,7 @@ function App() {
         {!isAndroid && (
           <button
             className={`material-symbols-outlined text-4xl bg-background rounded-full max-sm:p-2 
-              border border-neutral-400 dark:border-white`}
+              border border-neutral-400 dark:border-white max-sm:shadow-lg`}
             onClick={() => window.print()}
           >
             print
