@@ -87,7 +87,8 @@ function App() {
         </div>
         {!isAndroid && (
           <button
-            className="material-symbols-outlined text-4xl bg-background rounded-full max-sm:p-2"
+            className={`material-symbols-outlined text-4xl bg-background rounded-full max-sm:p-2 
+              border border-neutral-400 dark:border-white`}
             onClick={() => window.print()}
           >
             print
