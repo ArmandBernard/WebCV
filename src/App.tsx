@@ -70,7 +70,7 @@ function App() {
       <div className="flex items-center gap-2 fixed sm:top-0 right-0 max-sm:bottom-0 print:invisible p-4">
         <div className="flex items-baseline gap-2 relative">
           <label
-            className={`max-sm:text-sm max-sm:absolute py-1 px-1 max-sm:left-1 rounded
+            className={`max-sm:text-sm max-sm:absolute py-1 px-2 max-sm:left-2 rounded
               max-sm:top-[-0.75rem] bg-background`}
             id={themePickerLabel}
           >
