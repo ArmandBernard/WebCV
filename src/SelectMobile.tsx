@@ -129,8 +129,8 @@ export const SelectMobile: FunctionComponent<SelectProps> = (props) => {
         aria-expanded={open}
         role="combobox"
         ref={buttonRef}
-        className={`p-2 border items-center bg-background border-neutral-400 dark:border-white 
-            rounded text-left flex justify-between gap-2`}
+        className={`p-4 border items-center bg-background border-neutral-400 dark:border-white 
+            rounded text-left flex justify-between gap-4 text-base`}
         onClick={onClickExpand}
         value={props.selectedOption}
       >
@@ -139,7 +139,7 @@ export const SelectMobile: FunctionComponent<SelectProps> = (props) => {
       </button>
       <Dialog
         show={open}
-        className={`p-0 w-full fixed bottom-4 top-auto bg-background text-text-color 
+        className={`p-0 w-full fixed bottom-4 top-auto bg-background text-text-color text-base
           border border-neutral-400 dark:border-white rounded`}
         ref={dropdownRef}
       >
