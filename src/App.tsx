@@ -13,6 +13,7 @@ import { Education } from "./Education";
 import { Experience } from "./Experience";
 import { Links } from "./Links";
 import { Select } from "./Select";
+import { SelectMobile } from "./SelectMobile";
 import { ThemeContext } from "./ThemeContext";
 import { useLocalStorage } from "./useLocalStorage";
 import { useSystemPreferredTheme } from "./useSystemPreferredTheme";
@@ -75,15 +76,22 @@ function App() {
           >
             Theme
           </label>
-
-          <Select
-            position={windowWidth < 640 ? "top" : "bottom"}
-            aria-labelledby={themePickerLabel}
-            className="sm:w-20"
-            options={["auto", "dark", "light"]}
-            selectedOption={themePreference ?? "auto"}
-            setSelectedOption={setThemePreference}
-          />
+          {windowWidth < 640 ? (
+            <SelectMobile
+              aria-labelledby={themePickerLabel}
+              options={["auto", "dark", "light"]}
+              selectedOption={themePreference ?? "auto"}
+              setSelectedOption={setThemePreference}
+            />
+          ) : (
+            <Select
+              position={"bottom"}
+              aria-labelledby={themePickerLabel}
+              options={["auto", "dark", "light"]}
+              selectedOption={themePreference ?? "auto"}
+              setSelectedOption={setThemePreference}
+            />
+          )}
         </div>
         {!isAndroid && (
           <button
