@@ -6,6 +6,7 @@ import {
   useRef,
   useState,
 } from "react";
+import { Dialog } from "./Dialog";
 import { useOutsideClickHandler } from "./useOutsideClickHandler";
 
 interface SelectProps {
@@ -23,7 +24,7 @@ export const SelectMobile: FunctionComponent<SelectProps> = (props) => {
 
   const listBoxId = useId();
 
-  const dropdownRef = useRef<HTMLDivElement>(null);
+  const dropdownRef = useRef<HTMLDialogElement>(null);
   const buttonRef = useRef<HTMLButtonElement>(null);
 
   // close menu and restore focus to the open button
@@ -136,15 +137,17 @@ export const SelectMobile: FunctionComponent<SelectProps> = (props) => {
         {props.selectedOption ?? "Select an option"}
         <span className="material-symbols-outlined">arrow_drop_down</span>
       </button>
-      <div ref={dropdownRef} className={`relative ${!open && "invisible"}`}>
+      <Dialog
+        show={open}
+        className={`p-0 w-full fixed bottom-4 top-auto bg-background text-text-color 
+          border border-neutral-400 dark:border-white rounded`}
+        ref={dropdownRef}
+      >
         <div
           id={listBoxId}
           aria-label={props["aria-label"]}
           aria-labelledby={props["aria-labelledby"]}
-          className={`flex flex-col absolute border ${
-            props.position === "top" && "translate-y-[-100%]"
-          } bg-background border-neutral-400 
-              dark:border-white rounded w-full`}
+          className="flex flex-col"
           role="listbox"
           onBlur={onBlur}
           onKeyDown={onMenuKeyDown}
@@ -160,7 +163,7 @@ export const SelectMobile: FunctionComponent<SelectProps> = (props) => {
                 tabIndex={-1}
                 ref={refs[index]}
                 className={
-                  "p-2 flex items-baseline justify-between w-full text-left whitespace-nowrap"
+                  "p-4 flex items-baseline justify-between w-full text-left whitespace-nowrap"
                 }
                 onClick={() => onClickItem(option)}
               >
@@ -177,7 +180,7 @@ export const SelectMobile: FunctionComponent<SelectProps> = (props) => {
             );
           })}
         </div>
-      </div>
+      </Dialog>
     </div>
   );
 };
