@@ -18,7 +18,7 @@ interface SelectProps {
   setSelectedOption: (option: string) => void;
 }
 
-export const Select: FunctionComponent<SelectProps> = (props) => {
+export const SelectMobile: FunctionComponent<SelectProps> = (props) => {
   const [open, setOpen] = useState<boolean>(false);
 
   const listBoxId = useId();
@@ -129,7 +129,7 @@ export const Select: FunctionComponent<SelectProps> = (props) => {
         role="combobox"
         ref={buttonRef}
         className={`p-2 border items-center bg-background border-neutral-400 dark:border-white 
-          rounded text-left flex justify-between gap-2`}
+            rounded text-left flex justify-between gap-2`}
         onClick={onClickExpand}
         value={props.selectedOption}
       >
@@ -144,7 +144,7 @@ export const Select: FunctionComponent<SelectProps> = (props) => {
           className={`flex flex-col absolute border ${
             props.position === "top" && "translate-y-[-100%]"
           } bg-background border-neutral-400 
-            dark:border-white rounded w-full`}
+              dark:border-white rounded w-full`}
           role="listbox"
           onBlur={onBlur}
           onKeyDown={onMenuKeyDown}
