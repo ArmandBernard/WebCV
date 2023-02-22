@@ -1,12 +1,6 @@
-import {
-  createRef,
-  FunctionComponent,
-  useId,
-  useMemo,
-  useRef,
-  useState,
-} from "react";
+import { FunctionComponent, useId, useState } from "react";
 import { useOutsideClickHandler } from "./useOutsideClickHandler";
+import { useSelect } from "./useSelect";
 
 interface SelectProps {
   "aria-label"?: string;
@@ -19,101 +13,30 @@ interface SelectProps {
 }
 
 export const Select: FunctionComponent<SelectProps> = (props) => {
+  const { selectedOption, setSelectedOption } = props;
+
   const [open, setOpen] = useState<boolean>(false);
 
   const listBoxId = useId();
 
-  const dropdownRef = useRef<HTMLDivElement>(null);
-  const buttonRef = useRef<HTMLButtonElement>(null);
-
-  // close menu and restore focus to the open button
-  const onClose = () => {
-    setOpen(false);
-
-    buttonRef.current?.focus();
-  };
+  const {
+    buttonRef,
+    dropdownRef,
+    optionRefs,
+    onBlur,
+    onClickExpand,
+    onClickItem,
+    onMenuKeyDown,
+  } = useSelect({
+    open,
+    options: props.options,
+    setOpen,
+    selectedOption,
+    setSelectedOption,
+  });
 
   // close the menu when someone clicks outside of it
   useOutsideClickHandler(dropdownRef, () => setOpen(false));
-
-  // create refs for each item
-  const refs = useMemo(
-    () =>
-      Array.from({ length: props.options.length }).map(() =>
-        createRef<HTMLButtonElement>()
-      ),
-    [props.options]
-  );
-
-  // focus an option by its index
-  const focusOption = (index: number) => {
-    refs[index].current?.focus();
-  };
-
-  // close the dropdown on focus loss
-  const onBlur = (e: React.FocusEvent) => {
-    // onBlur can trigger even if the focus has switched to another child
-    if (dropdownRef.current?.contains(e.relatedTarget)) {
-      return;
-    }
-
-    setOpen(false);
-  };
-
-  // open the menu when the dropdown button is click
-  const onClickExpand = () => {
-    if (!open) {
-      setOpen(true);
-
-      const selectedIndex = props.options.findIndex(
-        (option) => option === props.selectedOption
-      );
-
-      setTimeout(
-        () => focusOption(selectedIndex !== -1 ? selectedIndex : 0),
-        0
-      );
-    }
-  };
-
-  // select an option on clicking its button
-  const onClickItem = (option: string) => {
-    props.setSelectedOption(option);
-    onClose();
-  };
-
-  // handle dropdown menu-wide keypresses
-  const onMenuKeyDown = (e: React.KeyboardEvent) => {
-    switch (e.key) {
-      case "Escape":
-        e.preventDefault();
-
-        onClose();
-        break;
-      case "ArrowDown":
-      case "ArrowRight":
-        {
-          e.preventDefault();
-
-          const focusedIndex = refs.findIndex(
-            (bRef) => bRef.current === document.activeElement
-          );
-          focusOption((focusedIndex + 1) % props.options.length);
-        }
-        break;
-      case "ArrowUp":
-      case "ArrowLeft":
-        {
-          e.preventDefault();
-
-          const focusedIndex = refs.findIndex(
-            (bRef) => bRef.current === document.activeElement
-          );
-          focusOption((focusedIndex - 1) % props.options.length);
-        }
-        break;
-    }
-  };
 
   return (
     <div
@@ -158,7 +81,7 @@ export const Select: FunctionComponent<SelectProps> = (props) => {
                 aria-selected={selected}
                 role="option"
                 tabIndex={-1}
-                ref={refs[index]}
+                ref={optionRefs[index]}
                 className={
                   "p-2 flex items-baseline justify-between w-full text-left whitespace-nowrap"
                 }
