@@ -67,7 +67,10 @@ function App() {
 
   return (
     <ThemeContext.Provider value={activeTheme}>
-      <div className="flex items-center gap-4 fixed sm:top-0 right-0 max-sm:bottom-0 print:invisible p-4">
+      <div
+        className={`flex items-center gap-4 fixed m-4 p-2 rounded 
+          print:invisible sm:shadow-lg sm:bg-background sm:top-0 right-0 max-sm:bottom-0`}
+      >
         <div className="flex items-baseline gap-2 relative">
           <label
             className={`max-sm:text-sm max-sm:absolute py-1 px-2 max-sm:left-2 rounded
