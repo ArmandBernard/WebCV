@@ -7,7 +7,7 @@ export const useSelect = (props: {
   selectedOption: string | undefined;
   setSelectedOption: (option: string) => void;
 }) => {
-  const dropdownRef = useRef<HTMLDivElement>(null);
+  const dropdownRef = useRef<HTMLElement>(null);
   const buttonRef = useRef<HTMLButtonElement>(null);
 
   // create refs for each item

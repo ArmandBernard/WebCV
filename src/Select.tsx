@@ -1,4 +1,4 @@
-import { FunctionComponent, useId, useState } from "react";
+import { FunctionComponent, RefObject, useId, useState } from "react";
 import { useOutsideClickHandler } from "./useOutsideClickHandler";
 import { useSelect } from "./useSelect";
 
@@ -59,7 +59,10 @@ export const Select: FunctionComponent<SelectProps> = (props) => {
         {props.selectedOption ?? "Select an option"}
         <span className="material-symbols-outlined">arrow_drop_down</span>
       </button>
-      <div ref={dropdownRef} className={`relative ${!open && "invisible"}`}>
+      <div
+        ref={dropdownRef as RefObject<HTMLDivElement>}
+        className={`relative ${!open && "invisible"}`}
+      >
         <div
           id={listBoxId}
           aria-label={props["aria-label"]}
