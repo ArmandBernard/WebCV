@@ -32,9 +32,9 @@ export const Dialog = forwardRef<HTMLDialogElement, DialogProps>(
     useImperativeHandle(ref, () => innerRef.current as HTMLDialogElement);
 
     useEffect(() => {
-      if (show) {
+      if (show && !innerRef.current?.open) {
         innerRef.current?.showModal();
-      } else {
+      } else if (!show && innerRef.current?.open) {
         innerRef.current?.close();
       }
     }, [show]);
