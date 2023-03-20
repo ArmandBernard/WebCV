@@ -67,6 +67,11 @@ export const SelectMobile: FunctionComponent<SelectProps> = (props) => {
           border border-neutral-400 dark:border-white rounded`}
         ref={dropdownRef as RefObject<HTMLDialogElement>}
       >
+        {/* Implementation of focus handling is different to spec, so listbox does not need focusing.
+          Compared to https://www.w3.org/WAI/ARIA/apg/patterns/combobox/examples/combobox-select-only/
+          and behaves the same to a screen reader and keyboard user.
+          */
+        /* eslint-disable-next-line jsx-a11y/interactive-supports-focus */}
         <div
           id={listBoxId}
           aria-label={props["aria-label"]}
