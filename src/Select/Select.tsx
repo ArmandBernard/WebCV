@@ -59,7 +59,9 @@ export const Select: FunctionComponent<SelectProps> = (props) => {
         value={props.selectedOption}
       >
         {props.selectedOption ?? "Select an option"}
-        <span className="material-symbols-outlined">arrow_drop_down</span>
+        <span aria-hidden className="material-symbols-outlined">
+          arrow_drop_down
+        </span>
       </button>
       <div
         ref={dropdownRef as RefObject<HTMLDivElement>}
