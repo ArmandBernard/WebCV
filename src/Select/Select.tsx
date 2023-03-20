@@ -5,6 +5,7 @@ import { useSelect } from "./useSelect";
 interface SelectProps {
   "aria-label"?: string;
   "aria-labelledby"?: string;
+  id?: string;
   position?: "top" | "bottom";
   className?: string;
   options: string[];
@@ -45,6 +46,7 @@ export const Select: FunctionComponent<SelectProps> = (props) => {
       } ${props.className}`}
     >
       <button
+        id={props.id}
         aria-label={props["aria-label"]}
         aria-labelledby={props["aria-labelledby"]}
         aria-controls={listBoxId}

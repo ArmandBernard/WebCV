@@ -6,6 +6,7 @@ import { useSelect } from "./useSelect";
 interface SelectProps {
   "aria-label"?: string;
   "aria-labelledby"?: string;
+  id?: string;
   className?: string;
   options: string[];
   selectedOption: string | undefined;
@@ -41,6 +42,7 @@ export const SelectMobile: FunctionComponent<SelectProps> = (props) => {
   return (
     <div className={`flex ${props.className}`}>
       <button
+        id={props.id}
         aria-label={props["aria-label"]}
         aria-labelledby={props["aria-labelledby"]}
         aria-controls={listBoxId}
