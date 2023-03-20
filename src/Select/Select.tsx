@@ -5,6 +5,7 @@ import { useSelect } from "./useSelect";
 interface SelectProps {
   "aria-label"?: string;
   "aria-labelledby"?: string;
+  id?: string;
   position?: "top" | "bottom";
   className?: string;
   options: string[];
@@ -45,6 +46,7 @@ export const Select: FunctionComponent<SelectProps> = (props) => {
       } ${props.className}`}
     >
       <button
+        id={props.id}
         aria-label={props["aria-label"]}
         aria-labelledby={props["aria-labelledby"]}
         aria-controls={listBoxId}
@@ -57,12 +59,19 @@ export const Select: FunctionComponent<SelectProps> = (props) => {
         value={props.selectedOption}
       >
         {props.selectedOption ?? "Select an option"}
-        <span className="material-symbols-outlined">arrow_drop_down</span>
+        <span aria-hidden className="material-symbols-outlined">
+          arrow_drop_down
+        </span>
       </button>
       <div
         ref={dropdownRef as RefObject<HTMLDivElement>}
         className={`relative ${!open && "invisible"}`}
       >
+        {/* Implementation of focus handling is different to spec, so listbox does not need focusing.
+          Compared to https://www.w3.org/WAI/ARIA/apg/patterns/combobox/examples/combobox-select-only/
+          and behaves the same to a screen reader and keyboard user.
+          */
+        /* eslint-disable-next-line jsx-a11y/interactive-supports-focus */}
         <div
           id={listBoxId}
           aria-label={props["aria-label"]}

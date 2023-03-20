@@ -7,7 +7,8 @@ export const PageControls: FunctionComponent<{
   themePreference: string | null;
   setThemePreference: (preference: string) => void;
 }> = ({ themePreference, setThemePreference }) => {
-  const themePickerLabel = useId();
+  const themePickerId = useId();
+  const themePickerLabelId = useId();
 
   const isAndroid = useMemo(
     () => navigator.userAgent.toLowerCase().includes("android"),
@@ -23,24 +24,27 @@ export const PageControls: FunctionComponent<{
     >
       <div className="flex items-baseline gap-2 relative">
         <label
+          htmlFor={themePickerId}
           className={`max-sm:text-sm max-sm:absolute py-1 px-2 max-sm:left-2 rounded
               max-sm:top-[-0.75rem] bg-background`}
-          id={themePickerLabel}
+          id={themePickerLabelId}
         >
           Theme
         </label>
         {windowWidth < 640 ? (
           <SelectMobile
             className="shadow-lg"
-            aria-labelledby={themePickerLabel}
+            id={themePickerId}
+            aria-labelledby={themePickerLabelId}
             options={["auto", "dark", "light"]}
             selectedOption={themePreference ?? "auto"}
             setSelectedOption={setThemePreference}
           />
         ) : (
           <Select
+            id={themePickerId}
             position={"bottom"}
-            aria-labelledby={themePickerLabel}
+            aria-labelledby={themePickerLabelId}
             options={["auto", "dark", "light"]}
             selectedOption={themePreference ?? "auto"}
             setSelectedOption={setThemePreference}

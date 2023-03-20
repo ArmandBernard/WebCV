@@ -67,7 +67,6 @@ export const useSelect = (props: {
         onClose();
         break;
       case "ArrowDown":
-      case "ArrowRight":
         {
           e.preventDefault();
 
@@ -78,7 +77,6 @@ export const useSelect = (props: {
         }
         break;
       case "ArrowUp":
-      case "ArrowLeft":
         {
           e.preventDefault();
 

@@ -1,4 +1,4 @@
-import { Tag } from "./Tag";
+import { TagList } from "./TagList";
 import { Timeline } from "./Timeline";
 import { TimelineSegment } from "./TimelineSegment";
 
@@ -12,17 +12,17 @@ export const Experience = () => (
             Software Engineer at{" "}
             <a href="https://www.red-gate.com/">Redgate Software</a>
           </h3>
-          <div className="flex flex-wrap gap-2">
-            <Tag>.NET Core</Tag>
-            <Tag>CI/CD</Tag>
-            <Tag>C#</Tag>
-            <Tag>Design System</Tag>
-            <Tag>React</Tag>
-            <Tag>SQL</Tag>
-            <Tag>Tailwind</Tag>
-            <Tag>TypeScript</Tag>
-            <Tag>Unit Testing</Tag>
-          </div>
+          <TagList aria-label="technologies">
+            <TagList.Item>.NET Core</TagList.Item>
+            <TagList.Item>CI/CD</TagList.Item>
+            <TagList.Item>C#</TagList.Item>
+            <TagList.Item>Design System</TagList.Item>
+            <TagList.Item>React</TagList.Item>
+            <TagList.Item>SQL</TagList.Item>
+            <TagList.Item>Tailwind</TagList.Item>
+            <TagList.Item>TypeScript</TagList.Item>
+            <TagList.Item>Unit Testing</TagList.Item>
+          </TagList>
           <p>
             Worked as a full-stack software engineer on{" "}
             <a href="https://www.red-gate.com/products/dba/sql-monitor/">
@@ -89,15 +89,15 @@ export const Experience = () => (
             Manufacturing Engineer at{" "}
             <a href="https://www.borgwarner.com/home">BorgWarner</a>
           </h3>
-          <div className="flex flex-wrap gap-2">
-            <Tag>.NET Framework</Tag>
-            <Tag>C#</Tag>
-            <Tag>Machine Learning</Tag>
-            <Tag>Machine Vision</Tag>
-            <Tag>SQL</Tag>
-            <Tag>WinForms</Tag>
-            <Tag>WiX Toolset</Tag>
-          </div>
+          <TagList aria-label="technologies">
+            <TagList.Item>.NET Framework</TagList.Item>
+            <TagList.Item>C#</TagList.Item>
+            <TagList.Item>Machine Learning</TagList.Item>
+            <TagList.Item>Machine Vision</TagList.Item>
+            <TagList.Item>SQL</TagList.Item>
+            <TagList.Item>WinForms</TagList.Item>
+            <TagList.Item>WiX Toolset</TagList.Item>
+          </TagList>
           <p className="italic">
             Continuation of the previous role after BorgWarner acquisition of
             Delphi Technologies.
@@ -140,14 +140,14 @@ export const Experience = () => (
             Manufacturing Engineer at{" "}
             <a href="https://www.delphiautoparts.com/">Delphi Technologies</a>
           </h3>
-          <div className="flex flex-wrap gap-2">
-            <Tag>.NET Framework</Tag>
-            <Tag>C#</Tag>
-            <Tag>Machine Vision</Tag>
-            <Tag>SQL</Tag>
-            <Tag>WinForms</Tag>
-            <Tag>WiX Toolset</Tag>
-          </div>
+          <TagList aria-label="technologies">
+            <TagList.Item>.NET Framework</TagList.Item>
+            <TagList.Item>C#</TagList.Item>
+            <TagList.Item>Machine Vision</TagList.Item>
+            <TagList.Item>SQL</TagList.Item>
+            <TagList.Item>WinForms</TagList.Item>
+            <TagList.Item>WiX Toolset</TagList.Item>
+          </TagList>
           <p>
             Worked as the sole developer in the Continuous Improvement team, a
             small cross-disciplinary team of manufacturing engineers and
@@ -207,11 +207,11 @@ export const Experience = () => (
           <h3 className="font-semibold">
             Placement at Atkins engineering consultancy
           </h3>
-          <div className="flex flex-wrap gap-2">
-            <Tag>.NET Framework</Tag>
-            <Tag>VBA</Tag>
-            <Tag>WinForms</Tag>
-          </div>
+          <TagList aria-label="technologies">
+            <TagList.Item>.NET Framework</TagList.Item>
+            <TagList.Item>VBA</TagList.Item>
+            <TagList.Item>WinForms</TagList.Item>
+          </TagList>
           <p>
             1 year placement working as a civil/mechanical engineer. Mix of
             engineering work and trying to improve internal systems in
