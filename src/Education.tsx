@@ -44,10 +44,7 @@ const GradeList: FunctionComponent<GradeListProps> = (props) => (
     {props.grades.map(([subject, grade]) => (
       <li key={subject} className="flex items-baseline gap-2">
         {subject}
-        <span
-          className="flex items-center justify-center bg-grade h-6 w-6 rounded-full"
-          aria-label={`grade ${grade}`}
-        >
+        <span className="flex items-center justify-center bg-grade h-6 w-6 rounded-full">
           {grade}
         </span>
       </li>
