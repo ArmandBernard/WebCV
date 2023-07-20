@@ -60,6 +60,24 @@ export const Experience = () => (
             </li>
           </ul>
           <p>
+            Championing <b>accessibility</b> and improving it in the following
+            ways:
+          </p>
+          <ul className="list-disc pl-8">
+            <li>
+              More accessibility focused PRs than anyone else in the product.
+            </li>
+            <li>
+              Creating a tool to{" "}
+              <b>automatically collect metrics on the accessibility</b> of SQL
+              Monitor to track our accessibility journey. The data is hosted in
+              Azure and a Grafana dashboard was created to visualise the data.
+            </li>
+            <li>
+              Introducing linters to shift-left the resolution of accessibility
+              issues.
+            </li>
+          </ul>
           <p>
             Heavily involved in the development of the internal{" "}
             <b>design system</b>, Honeycomb.
