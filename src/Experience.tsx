@@ -33,6 +33,12 @@ export const Experience = () => (
           </p>
           <ul className="list-disc pl-8">
             <li>
+              Worked on many of the core features of the product, including:
+              tags, current activity, query search, recommendations, query
+              tracking, top queries and procedures, impact and actual plans.
+              Just to name a few.
+            </li>
+            <li>
               <b>Front-end</b> web-app development using{" "}
               <b>TypeScript, React and Tailwind</b>.
             </li>
