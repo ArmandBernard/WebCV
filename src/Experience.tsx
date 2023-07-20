@@ -29,8 +29,15 @@ export const Experience = () => (
               SQL Monitor
             </a>
             , a database monitoring tool targeted at database administrators.
+            SQL Monitor currently has 4 dev teams with 5-6 people in each.
           </p>
           <ul className="list-disc pl-8">
+            <li>
+              Worked on many of the core features of the product, including:
+              tags, current activity, query search, recommendations, query
+              tracking, top queries and procedures, impact and actual plans.
+              Just to name a few.
+            </li>
             <li>
               <b>Front-end</b> web-app development using{" "}
               <b>TypeScript, React and Tailwind</b>.
@@ -59,16 +66,45 @@ export const Experience = () => (
             </li>
           </ul>
           <p>
-            Heavily involved in the development of internal{" "}
-            <b>design systems</b>.
+            Championing <b>accessibility</b> and improving it in the following
+            ways:
           </p>
           <ul className="list-disc pl-8">
             <li>
-              Choosing the technologies and libraries involved (Yarn, React,
-              Tailwind, MUI).
+              More accessibility focused PRs than anyone else in the product.
+            </li>
+            <li>
+              Creating a tool to{" "}
+              <b>automatically collect metrics on the accessibility</b> of SQL
+              Monitor to track our accessibility journey. The data is hosted in
+              Azure and a Grafana dashboard was created to visualise the data.
+            </li>
+            <li>
+              Introducing linters to shift-left the resolution of accessibility
+              issues.
+            </li>
+          </ul>
+          <p>
+            Heavily involved in the development of the internal{" "}
+            <b>design system</b>, Honeycomb.
+          </p>
+          <ul className="list-disc pl-8">
+            <li>
+              Strategy calls with the stakeholders and backers of the Design
+              System, including the heads of Engineering and Design.
+            </li>
+            <li>
+              Helping choose the technologies and libraries involved (Yarn,
+              React, Tailwind, MUI).
             </li>
             <li>
               Writing <b>CI/CD</b> pipeline using GitHub Actions, bash, npm.
+            </li>
+            <li>Migrating from GitHub Actions to CircleCI</li>
+            <li>
+              Co-hosting a workshop at the company conference on how to use MUI,
+              including a talk about how to develop accessible components with
+              MUI.
             </li>
             <li>Writing component API guidelines and best practice.</li>
             <li>
