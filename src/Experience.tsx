@@ -70,6 +70,12 @@ export const Experience = () => (
             <li>
               Writing <b>CI/CD</b> pipeline using GitHub Actions, bash, npm.
             </li>
+            <li>Migrating from GitHub Actions to CircleCI</li>
+            <li>
+              Co-hosting a workshop at the company conference on how to use MUI,
+              including a talk about how to develop accessible components with
+              MUI.
+            </li>
             <li>Writing component API guidelines and best practice.</li>
             <li>
               Writing guidance on which components to use in what situation.
