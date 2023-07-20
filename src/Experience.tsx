@@ -29,6 +29,7 @@ export const Experience = () => (
               SQL Monitor
             </a>
             , a database monitoring tool targeted at database administrators.
+            SQL Monitor currently has 4 dev teams with 5-6 people in each.
           </p>
           <ul className="list-disc pl-8">
             <li>
