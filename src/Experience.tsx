@@ -62,7 +62,7 @@ export const Experience = () => (
           <p>
           <p>
             Heavily involved in the development of the internal{" "}
-            <b>design system, Honeycomb</b>.
+            <b>design system</b>, Honeycomb.
           </p>
           <ul className="list-disc pl-8">
             <li>
