@@ -66,8 +66,12 @@ export const Experience = () => (
           </p>
           <ul className="list-disc pl-8">
             <li>
-              Choosing the technologies and libraries involved (Yarn, React,
-              Tailwind, MUI).
+              Strategy calls with the stakeholders and backers of the Design
+              System, including the heads of Engineering and Design.
+            </li>
+            <li>
+              Helping choose the technologies and libraries involved (Yarn,
+              React, Tailwind, MUI).
             </li>
             <li>
               Writing <b>CI/CD</b> pipeline using GitHub Actions, bash, npm.
