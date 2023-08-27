@@ -1,6 +1,8 @@
+(TEST UPLOAD)
+
 This is the repository is where I manage my Web CV!
 
-[Go to the live site](https://armandbernard.github.io/WebCV/)
+Go to the live site
 
 The site will use a light or dark theme, based on your system theme.
 
