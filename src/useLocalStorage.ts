@@ -17,13 +17,14 @@ export const useLocalStorage = (
     const storedValue = localStorage.getItem(key);
 
     // write default into local storage if not yet set
-    defaultValue !== undefined &&
-      state === null &&
-      storedValue === null &&
+    if (defaultValue !== undefined && state === null && storedValue === null) {
       localStorage.setItem(key, defaultValue);
+    }
 
     // use loaded in state
-    storedValue !== null && setState(storedValue);
+    if (storedValue !== null) {
+      setState(storedValue);
+    }
   }, [key, defaultValue, state]);
 
   return [state, set];
