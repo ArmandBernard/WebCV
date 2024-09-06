@@ -24,7 +24,7 @@
     "react-hooks/exhaustive-deps": "error",
     "react/react-in-jsx-scope": "off",
     "indent": [1, 2, { "SwitchCase": 1 }],
-    "quotes": [1, "double"],
+    "quotes": [1, "double", { "allowTemplateLiterals": true }],
     "semi": [1, "always"]
   },
   "settings": {
