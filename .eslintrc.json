@@ -26,5 +26,10 @@
     "indent": [1, 2, { "SwitchCase": 1 }],
     "quotes": [1, "double"],
     "semi": [1, "always"]
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
   }
 }
