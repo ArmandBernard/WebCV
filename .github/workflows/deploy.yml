@@ -48,7 +48,7 @@ jobs:
         uses: actions/upload-pages-artifact@v3
         with:
           # Upload just dist folder
-          path: "./dist"
+          path: "./dist/WebCV"
       - name: Deploy
         id: deployment
         uses: actions/deploy-pages@v4
