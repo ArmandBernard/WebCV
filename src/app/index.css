@@ -12,13 +12,11 @@
     @apply max-sm:text-lg;
   }
   a {
-    @apply text-blue-600 dark:text-blue-400;
+    @apply underline text-blue-800 decoration-blue-400 dark:text-blue-400 dark:decoration-blue-600 dark:hover:decoration-current hover:decoration-current;
   }
-  a:hover {
-    @apply underline;
-  }
+
   a:visited {
-    @apply text-violet-600 dark:text-violet-400;
+    @apply text-violet-800 decoration-violet-400 dark:text-violet-400 dark:decoration-violet-600 dark:hover:decoration-current hover:decoration-current;
   }
 
   body {
