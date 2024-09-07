@@ -6,7 +6,13 @@ export const Experience = () => (
   <div className="break-before">
     <h2>Experience</h2>
     <Timeline>
-      <TimelineSegment timelineText="Present">
+      <TimelineSegment
+        timelineText={
+          <>
+            <p>Present</p>(updated Jul 2023)
+          </>
+        }
+      >
         <div className="flex flex-col gap-2">
           <h3 className="font-semibold">
             Software Engineer at{" "}
