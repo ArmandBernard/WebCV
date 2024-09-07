@@ -13,6 +13,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="dark">
+      <head>
+        <link rel="shortcut icon" href="#" />
+      </head>
       <body className={`antialiased`}>{children}</body>
     </html>
   );
