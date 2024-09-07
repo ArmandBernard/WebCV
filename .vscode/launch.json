@@ -14,9 +14,9 @@
     {
       "type": "node",
       "request": "launch",
-      "name": "host",
+      "name": "start",
       "runtimeExecutable": "npm",
-      "runtimeArgs": ["run-script", "host"]
+      "runtimeArgs": ["run-script", "start"]
     },
     {
       "type": "node",

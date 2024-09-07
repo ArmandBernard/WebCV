@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { FunctionComponent } from "react";
 
 export const Links = () => {
@@ -8,24 +9,24 @@ export const Links = () => {
         <LinkImage
           href="https://www.linkedin.com/in/armand-bernard-8605b8b1/"
           alt="LinkedIn profile"
-          src="./linked-in.svg"
+          src="/linked-in.svg"
         />
         <LinkImage
           className="dark:hidden print:dark:flex"
           href="https://github.com/ArmandBernard"
           alt="GitHub Profile"
-          src="./github.svg"
+          src="/github.svg"
         />
         <LinkImage
           className="hidden dark:flex print:dark:hidden"
           href="https://github.com/ArmandBernard"
           alt="GitHub Profile"
-          src="./github-white.svg"
+          src="/github-white.svg"
         />
         <LinkImage
           href="https://stackoverflow.com/users/5706830/armand-bernard"
           alt="Stack Overflow Profile"
-          src="./stack-overflow.svg"
+          src="/stack-overflow.svg"
         />
         <a
           href="mailto:armandbernard1995@gmail.com"
@@ -47,10 +48,7 @@ const LinkImage: FunctionComponent<{
   src: string;
   className?: string;
 }> = ({ className, href, alt, src }) => (
-  <a
-    href={href}
-    className={`flex items-center justify-center h-16 w-16 ${className}`}
-  >
-    <img alt={alt} src={src} />
+  <a href={href} className={`flex items-center justify-center ${className}`}>
+    <Image width={64} height={64} alt={alt} src={src} />
   </a>
 );

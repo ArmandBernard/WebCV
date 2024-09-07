@@ -1,33 +1,29 @@
 {
   "name": "web-cv",
+  "version": "0.1.0",
   "private": true,
-  "version": "0.0.0",
-  "type": "module",
   "scripts": {
-    "dev": "vite",
-    "host": "vite --host",
-    "build": "tsc && vite build",
-    "preview": "vite preview",
-    "lint": "eslint --max-warnings 0 src"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "serve dist",
+    "lint": "next lint"
   },
   "dependencies": {
     "react": "18.3.1",
     "react-dom": "18.3.1"
   },
   "devDependencies": {
+    "@types/node": "22.5.4",
     "@types/react": "18.3.5",
     "@types/react-dom": "18.3.0",
-    "@typescript-eslint/eslint-plugin": "8.4.0",
-    "@typescript-eslint/parser": "8.4.0",
-    "@vitejs/plugin-react": "4.3.1",
-    "autoprefixer": "10.4.20",
     "eslint": "8.57.0",
+    "eslint-config-next": "14.2.8",
     "eslint-plugin-jsx-a11y": "6.10.0",
-    "eslint-plugin-react": "7.35.2",
     "eslint-plugin-react-hooks": "4.6.2",
+    "next": "14.2.8",
     "postcss": "8.4.45",
-    "tailwindcss": "3.4.10",
-    "typescript": "5.5.4",
-    "vite": "5.4.3"
+    "serve": "14.2.3",
+    "tailwindcss": "3.4.1",
+    "typescript": "5.5.4"
   }
 }

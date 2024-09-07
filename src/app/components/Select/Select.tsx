@@ -1,5 +1,5 @@
 import { FunctionComponent, RefObject, useId, useState } from "react";
-import { useOutsideClickHandler } from "../useOutsideClickHandler";
+import { useOutsideClickHandler } from "../../hooks/useOutsideClickHandler";
 import { useSelect } from "./useSelect";
 
 interface SelectProps {

@@ -1,12 +1,12 @@
-/** @type {import('tailwindcss').Config} */
-// eslint-disable-next-line no-undef
-module.exports = {
-  content: ["./src/**/*.{html,js,jsx,ts,tsx}", "./*.html"],
-  darkMode: "class",
+import type { Config } from "tailwindcss";
+
+const config: Config = {
+  content: [
+    "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
+  ],
   theme: {
-    fontFamily: {
-      sans: ["Roboto", "sans-serif"],
-    },
     extend: {
       colors: {
         background: "var(--background)",
@@ -19,3 +19,4 @@ module.exports = {
   },
   plugins: [],
 };
+export default config;
