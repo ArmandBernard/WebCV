@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { FunctionComponent } from "react";
 import baseUrl from "../../../baseUrl";
 
@@ -49,7 +48,10 @@ const LinkImage: FunctionComponent<{
   src: string;
   className?: string;
 }> = ({ className, href, alt, src }) => (
-  <a href={href} className={`flex items-center justify-center ${className}`}>
-    <Image width={64} height={64} alt={alt} src={`${baseUrl}${src}`} />
+  <a
+    href={href}
+    className={`flex items-center justify-center h-16 w-16 ${className}`}
+  >
+    <img alt={alt} src={`${baseUrl}${src}`} />
   </a>
 );
