@@ -2,12 +2,10 @@
 
 import { useLocalStorage } from "@/app/hooks/useLocalStorage";
 import { useSystemPreferredTheme } from "@/app/hooks/useSystemPreferredTheme";
-import { useCallback, useEffect, useRef } from "react";
+import { useCallback, useEffect } from "react";
 import { PageControls } from "@/app/components/client/PageControls";
 
-export function ThemeController() {
-  const htmlRef = useRef(document.documentElement);
-
+export default function ThemeController() {
   // use local storage persisting state for app-level theme preference.
   // Defaults to system default.
   const [themePreference, setThemePreference] = useLocalStorage(
@@ -20,9 +18,9 @@ export function ThemeController() {
   // set the site theme using a class on the main html element
   const setTheme = useCallback((dark: boolean) => {
     if (dark) {
-      htmlRef.current.classList.add("dark");
+      document.documentElement.classList.add("dark");
     } else {
-      htmlRef.current.classList.remove("dark");
+      document.documentElement.classList.remove("dark");
     }
   }, []);
 
