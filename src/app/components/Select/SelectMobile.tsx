@@ -1,6 +1,6 @@
 import { FunctionComponent, RefObject, useId, useState } from "react";
 import { Dialog } from "../Dialog";
-import { useOutsideClickHandler } from "../useOutsideClickHandler";
+import { useOutsideClickHandler } from "../../hooks/useOutsideClickHandler";
 import { useSelect } from "./useSelect";
 
 interface SelectProps {

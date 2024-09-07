@@ -1,7 +1,7 @@
 import { FunctionComponent, useDeferredValue, useId, useMemo } from "react";
-import { Select } from "./Select/Select";
-import { SelectMobile } from "./Select/SelectMobile";
-import { useWindowWidth } from "./useWindowWidth";
+import { Select } from "../Select/Select";
+import { SelectMobile } from "../Select/SelectMobile";
+import { useWindowWidth } from "../../hooks/useWindowWidth";
 
 export const PageControls: FunctionComponent<{
   themePreference: string | null;
@@ -53,8 +53,9 @@ export const PageControls: FunctionComponent<{
       </div>
       {!isAndroid && (
         <button
-          className={`material-symbols-outlined text-4xl bg-background rounded-full max-sm:p-2 
-              border border-neutral-400 dark:border-white max-sm:shadow-lg`}
+          className={`material-symbols-outlined size-10 flex items-center justify-center text-4xl 
+            bg-background rounded-full border border-neutral-400 dark:border-white
+            max-sm:shadow-lg max-sm:size-12`}
           onClick={() => window.print()}
         >
           print
