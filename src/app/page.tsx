@@ -1,18 +1,13 @@
 import { AboutMe } from "./components/AboutMe";
+import { ThemeControllerWrapper } from "./components/client/ThemeController";
 import { Education } from "./components/Education";
 import { Experience } from "./components/Experience";
 import { Links } from "./components/Links";
-import dynamic from "next/dynamic";
-
-const ThemeController = dynamic(
-  () => import("@/app/components/client/ThemeController"),
-  { ssr: false }
-);
 
 export default function Home() {
   return (
     <div>
-      <ThemeController />
+      <ThemeControllerWrapper />
       <div className="space-y-4 max-sm:mb-16">
         <div className="flex justify-center">
           <main className="max-w-4xl px-4 flex-grow space-y-4 mb-8">
