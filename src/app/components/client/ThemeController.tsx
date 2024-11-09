@@ -4,12 +4,6 @@ import { useLocalStorage } from "@/app/hooks/useLocalStorage";
 import { useSystemPreferredTheme } from "@/app/hooks/useSystemPreferredTheme";
 import { useCallback, useEffect } from "react";
 import { PageControls } from "@/app/components/client/PageControls";
-import dynamic from "next/dynamic";
-
-export const ThemeControllerWrapper = dynamic(
-  () => import("@/app/components/client/ThemeController"),
-  { ssr: false }
-);
 
 export default function ThemeController() {
   // use local storage persisting state for app-level theme preference.

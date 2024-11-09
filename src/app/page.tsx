@@ -1,5 +1,5 @@
 import { AboutMe } from "./components/AboutMe";
-import { ThemeControllerWrapper } from "./components/client/ThemeController";
+import { ThemeControllerWrapper } from "./components/client/ThemeControllerWrapper";
 import { Education } from "./components/Education";
 import { Experience } from "./components/Experience";
 import { Links } from "./components/Links";
