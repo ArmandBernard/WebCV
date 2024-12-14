@@ -17,7 +17,11 @@ export const AboutMe = () => (
       </p>
       <p>
         I have experience planning and running initiatives, small teams /
-        projects and doing technical talks.
+        projects and doing <b>technical talks</b>.
+      </p>
+      <p>
+        I help write and enforce <b>standards</b> for good practice in software
+        engineering company-wide.
       </p>
       <h3 className="my-2">Skills</h3>
       <p>
