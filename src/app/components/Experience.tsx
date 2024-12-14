@@ -19,7 +19,12 @@ export const Experience = () => (
             <a href="https://www.red-gate.com/">Redgate Software</a>
           </h3>
 
-          <h4>Test Data Manager product (2024 - now)</h4>
+          <h4>
+            <a href="https://www.red-gate.com/products/test-data-manager/">
+              Test Data Manager
+            </a>{" "}
+            product (2024 - now)
+          </h4>
           <TagList aria-label="technologies">
             <TagList.Item>.NET Core</TagList.Item>
             <TagList.Item>CircleCI</TagList.Item>
@@ -152,7 +157,12 @@ export const Experience = () => (
             <li>Writing automated screenshot tests</li>
           </ul>
 
-          <h4>Monitor product (2021-2023)</h4>
+          <h4>
+            <a href="https://www.red-gate.com/products/redgate-monitor/">
+              Redgate Monitor
+            </a>{" "}
+            product (2021-2023)
+          </h4>
           <TagList aria-label="technologies">
             <TagList.Item>.NET Core</TagList.Item>
             <TagList.Item>C#</TagList.Item>
@@ -163,10 +173,7 @@ export const Experience = () => (
             <TagList.Item>Unit testing</TagList.Item>
           </TagList>
           <p>
-            Worked as a full-stack software engineer on{" "}
-            <a href="https://www.red-gate.com/products/redgate-monitor/">
-              Redgate Monitor
-            </a>{" "}
+            Worked as a full-stack software engineer on Redgate Monitor
             (formerly SQL Monitor), a mature (13+ years) database monitoring
             tool targeted at database administrators. At the time, SQL Monitor
             had 3-4 dev teams with 5-6 people in each. At this point they are at
