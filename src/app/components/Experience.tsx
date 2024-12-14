@@ -9,47 +9,190 @@ export const Experience = () => (
       <TimelineSegment
         timelineText={
           <>
-            <p>Present</p>(updated Jul 2023)
+            <p>Present</p>(updated Dec 2024)
           </>
         }
       >
         <div className="flex flex-col gap-2">
-          <h3 className="font-semibold">
+          <h3>
             Software Engineer at{" "}
             <a href="https://www.red-gate.com/">Redgate Software</a>
           </h3>
+
+          <h4>
+            <a href="https://www.red-gate.com/products/test-data-manager/">
+              Test Data Manager
+            </a>{" "}
+            product (2024 - now)
+          </h4>
           <TagList aria-label="technologies">
             <TagList.Item>.NET Core</TagList.Item>
-            <TagList.Item>CI/CD</TagList.Item>
+            <TagList.Item>CircleCI</TagList.Item>
             <TagList.Item>C#</TagList.Item>
-            <TagList.Item>Design System</TagList.Item>
+            <TagList.Item>MUI</TagList.Item>
+            <TagList.Item>Postgres</TagList.Item>
+            <TagList.Item>React</TagList.Item>
+            <TagList.Item>SQL</TagList.Item>
+            <TagList.Item>TypeScript</TagList.Item>
+            <TagList.Item>Unit testing</TagList.Item>
+            <TagList.Item>End-to-end testing</TagList.Item>
+          </TagList>
+          <p>
+            Brought onto TDM (Test Data Manager) product to improve front-end
+            standards and upskill engineers. TDM had been in development for 1
+            year at the time. TDM is a product for making copies production data
+            without sensitive data and smaller footprint for developers to test
+            against.
+          </p>
+          <p>
+            Organised the Honeycomb Champions, a{" "}
+            <b>cross-team initiative and working group</b> to:
+          </p>
+          <ul className="list-disc pl-8">
+            <li>
+              Upskill one person per team in front-end so they can be the go-to
+              person for front-end.
+            </li>
+            <li>
+              Make improvements to the front-end&apos;s architecture and
+              quality.
+            </li>
+            <li>
+              Implement the latest design system guidance and improve said
+              design system.
+            </li>
+          </ul>
+          <p>Mainline work around orchestration including:</p>
+          <ul className="list-disc pl-8">
+            <li>
+              Designing an easy to use system for error handling. Includes:
+              Standard error types, error handling middleware, error display
+              componentry.
+            </li>
+            <li>
+              Helping to build and integrate a <b>cross-database</b> (SQL
+              Server, Postgres, MySQL) <b>database provisioning</b> system.
+            </li>
+            <li>Helping design each piece of UI work with the designers.</li>
+            <li>Writing product documentation.</li>
+            <li>
+              Implementing synchronization of data with other Redgate products
+              via API calls and scheduled sync jobs.
+            </li>
+            <li>
+              Running a small team for 2 months to help transform our UI and
+              APIs for our new Workflows approach to test data management.
+            </li>
+            <li>
+              Refactoring our tests and CI processes to be faster and easier to
+              understand.
+            </li>
+          </ul>
+          <p>Other improvements:</p>
+          <ul className="list-disc pl-8">
+            <li>Creating a type-safe system for calling API endpoints.</li>
+            <li>Fixing all accessibility issues in the product.</li>
+            <li>
+              Modifying <b>working practices</b> to ensure high accessibility is
+              maintained.
+            </li>
+            <li>Implementing feature flags to help reduce branch life.</li>
+            <li>Adding many linters to improve code quality.</li>
+            <li>
+              Pushing for a product-wide Git policy (rebase + merge-commit).
+            </li>
+            <li>
+              Making an official dark theme possible by enforcing the use of
+              semantic colours.
+            </li>
+            <li>
+              Implementing front-end <b>code-splitting</b> to improve first-load
+              performance.
+            </li>
+            <li>
+              Performance and responsiveness optimization of large React pages.
+            </li>
+          </ul>
+
+          <h4>Honeycomb Design System (2021-2024, alongside regular work)</h4>
+          <TagList aria-label="technologies">
+            <TagList.Item>CircleCI</TagList.Item>
+            <TagList.Item>Design system</TagList.Item>
+            <TagList.Item>GitHub Actions</TagList.Item>
+            <TagList.Item>MUI</TagList.Item>
+            <TagList.Item>React</TagList.Item>
+            <TagList.Item>TypeScript</TagList.Item>
+            <TagList.Item>Tailwind</TagList.Item>
+          </TagList>
+          <p>
+            Heavily involved in the development and maintenance of the
+            Redgate&apos;s <b>design system</b>, Honeycomb.
+          </p>
+          <ul className="list-disc pl-8">
+            <li>
+              Strategy calls with the stakeholders and backers of the design
+              system, including the heads of Engineering and Design.
+            </li>
+            <li>
+              Helping to <b>choose the technologies and libraries</b> to use for
+              the newest implementation.
+            </li>
+            <li>
+              Writing <b>CI/CD</b> pipeline using GitHub Actions, bash, npm.
+            </li>
+            <li>Migrating from GitHub Actions to CircleCI</li>
+            <li>Designing new patterns in collaboration with designers.</li>
+            <li>
+              Co-hosting a <b>workshop</b> at the company conference on how to
+              use MUI, including a talk about how to develop accessible
+              components with MUI.
+            </li>
+            <li>
+              Several <b>talks</b> on best practices: Which components to use in
+              what situation and how.
+            </li>
+            <li>
+              Several <b>deep-dives</b> on MUI functionality.
+            </li>
+            <li>Writing automated screenshot tests</li>
+          </ul>
+
+          <h4>
+            <a href="https://www.red-gate.com/products/redgate-monitor/">
+              Redgate Monitor
+            </a>{" "}
+            product (2021-2023)
+          </h4>
+          <TagList aria-label="technologies">
+            <TagList.Item>.NET Core</TagList.Item>
+            <TagList.Item>C#</TagList.Item>
             <TagList.Item>React</TagList.Item>
             <TagList.Item>SQL</TagList.Item>
             <TagList.Item>Tailwind</TagList.Item>
             <TagList.Item>TypeScript</TagList.Item>
-            <TagList.Item>Unit Testing</TagList.Item>
+            <TagList.Item>Unit testing</TagList.Item>
           </TagList>
           <p>
-            Worked as a full-stack software engineer on{" "}
-            <a href="https://www.red-gate.com/products/dba/sql-monitor/">
-              SQL Monitor
-            </a>
-            , a database monitoring tool targeted at database administrators.
-            SQL Monitor currently has 4 dev teams with 5-6 people in each.
+            Worked as a full-stack software engineer on Redgate Monitor
+            (formerly SQL Monitor), a mature (13+ years) database monitoring
+            tool targeted at database administrators. At the time, SQL Monitor
+            had 3-4 dev teams with 5-6 people in each. At this point they are at
+            7 such teams.
           </p>
           <ul className="list-disc pl-8">
             <li>
               Worked on many of the core features of the product, including:
               tags, current activity, query search, recommendations, query
-              tracking, top queries and procedures, impact and actual plans.
-              Just to name a few.
+              tracking, top queries and procedures, query impact and actual
+              plans. Just to name a few.
             </li>
             <li>
               <b>Front-end</b> web-app development using{" "}
               <b>TypeScript, React and Tailwind</b>.
             </li>
             <li>
-              Writing <b>front-end unit tests</b> using Jest.
+              Writing <b>front-end unit tests</b> using Jest and React Testing
+              Library.
             </li>
             <li>
               <b>MVC</b> and <b>WebAPI</b> back-end development with{" "}
@@ -68,7 +211,11 @@ export const Experience = () => (
               product.
             </li>
             <li>
-              Migrating code from older frameworks such as: jQuery, Knockout.
+              Migrating code from older frameworks such as jQuery and Knockout
+              to React.
+            </li>
+            <li>
+              Planning and participating in front-end improvement task forces.
             </li>
           </ul>
           <p>
@@ -90,44 +237,11 @@ export const Experience = () => (
               issues.
             </li>
           </ul>
-          <p>
-            Heavily involved in the development of the internal{" "}
-            <b>design system</b>, Honeycomb.
-          </p>
-          <ul className="list-disc pl-8">
-            <li>
-              Strategy calls with the stakeholders and backers of the Design
-              System, including the heads of Engineering and Design.
-            </li>
-            <li>
-              Helping choose the technologies and libraries involved (Yarn,
-              React, Tailwind, MUI).
-            </li>
-            <li>
-              Writing <b>CI/CD</b> pipeline using GitHub Actions, bash, npm.
-            </li>
-            <li>Migrating from GitHub Actions to CircleCI</li>
-            <li>
-              Co-hosting a workshop at the company conference on how to use MUI,
-              including a talk about how to develop accessible components with
-              MUI.
-            </li>
-            <li>Writing component API guidelines and best practice.</li>
-            <li>
-              Writing guidance on which components to use in what situation.
-            </li>
-            <li>
-              Writing automatic <b>screenshot tests</b>
-            </li>
-            <li>
-              Improving flexibility and <b>accessibility</b>.
-            </li>
-          </ul>
         </div>
       </TimelineSegment>
       <TimelineSegment timelineText="Oct 2021">
         <div className="flex flex-col gap-2">
-          <h3 className="font-semibold">
+          <h3>
             Manufacturing Engineer at{" "}
             <a href="https://www.borgwarner.com/home">BorgWarner</a>
           </h3>
@@ -178,7 +292,7 @@ export const Experience = () => (
       </TimelineSegment>
       <TimelineSegment timelineText="Oct 2020">
         <div className="flex flex-col gap-2">
-          <h3 className="font-semibold">
+          <h3>
             Manufacturing Engineer at{" "}
             <a href="https://www.delphiautoparts.com/">Delphi Technologies</a>
           </h3>
@@ -246,9 +360,7 @@ export const Experience = () => (
       </TimelineSegment>
       <TimelineSegment timelineText="Sep 2016">
         <div className="flex flex-col gap-2">
-          <h3 className="font-semibold">
-            Placement at Atkins engineering consultancy
-          </h3>
+          <h3>Placement at Atkins engineering consultancy</h3>
           <TagList aria-label="technologies">
             <TagList.Item>.NET Framework</TagList.Item>
             <TagList.Item>VBA</TagList.Item>

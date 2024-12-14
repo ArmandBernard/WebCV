@@ -19,6 +19,8 @@ export const PageControls: FunctionComponent<{
 
   return (
     <div
+      aria-label="Page controls"
+      role="region"
       className={`flex items-center gap-4 fixed m-4 p-2 rounded 
           print:invisible sm:shadow-lg sm:bg-background sm:top-0 right-0 max-sm:bottom-0`}
     >
