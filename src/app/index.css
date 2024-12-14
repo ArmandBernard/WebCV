@@ -4,13 +4,22 @@
 
 @layer base {
   h1 {
-    @apply text-2xl;
-    @apply max-sm:text-xl;
+    @apply text-3xl font-light;
+    @apply max-sm:text-2xl;
   }
   h2 {
-    @apply text-xl;
+    @apply text-2xl font-light;
+    @apply max-sm:text-xl;
+  }
+  h3 {
+    @apply text-xl font-light;
     @apply max-sm:text-lg;
   }
+  h4 {
+    @apply text-lg font-light;
+    @apply max-sm:text-base;
+  }
+
   a {
     @apply underline text-blue-800 decoration-blue-400 dark:text-blue-400 dark:decoration-blue-600 dark:hover:decoration-current hover:decoration-current;
   }
