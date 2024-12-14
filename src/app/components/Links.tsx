@@ -4,7 +4,7 @@ import baseUrl from "../../../baseUrl";
 export const Links = () => {
   return (
     <div>
-      <h2>Links</h2>
+      <h2 className="my-2">Links</h2>
       <div className="flex items-center gap-2">
         <LinkImage
           href="https://www.linkedin.com/in/armand-bernard-8605b8b1/"

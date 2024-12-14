@@ -3,14 +3,14 @@ import { FunctionComponent } from "react";
 export const Education = () => (
   <div>
     <h2>Education</h2>
-    <h3 id="university" className="text-lg my-2">
+    <h3 id="university" className="my-2">
       University
     </h3>
     <p>
       <b>1st class MEng</b> (Master of Engineering) in Mechanical Engineering
       from Warwick University.
     </p>
-    <h3 className="text-lg my-2">A-levels</h3>
+    <h3 className="my-2">A-levels</h3>
     <GradeList
       grades={[
         ["Maths", "A"],
@@ -19,7 +19,7 @@ export const Education = () => (
         ["Chemistry", "B"],
       ]}
     />
-    <h3 className="text-lg my-2">GCSEs</h3>
+    <h3 className="my-2">GCSEs</h3>
     <div className="flex flex-col gap-2">
       <p>10 passes including:</p>
       <GradeList
