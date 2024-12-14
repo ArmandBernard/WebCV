@@ -4,15 +4,11 @@ import { TimelineSegment } from "./TimelineSegment";
 
 export const Experience = () => (
   <div className="break-before">
-    <h2>Experience</h2>
+    <h2 className="pb-2">
+      Experience <span className="text-base italic">updated December 2024</span>
+    </h2>
     <Timeline>
-      <TimelineSegment
-        timelineText={
-          <>
-            <p>Present</p>(updated Dec 2024)
-          </>
-        }
-      >
+      <TimelineSegment timelineText="Present">
         <div className="flex flex-col gap-2">
           <h3>
             Software Engineer at{" "}
