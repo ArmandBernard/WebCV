@@ -7,12 +7,15 @@ import tseslint from "typescript-eslint";
 import globals from "globals";
 
 export default defineConfig([
-  tseslint.configs.recommended,
-  eslint.configs.recommended,
+  ...tseslint.configs.recommended.map((config) => ({
+    ...config,
+    files: ["src/**/*.{ts,tsx}"],
+  })),
   {
     files: ["src/**/*.{js,jsx,ts,tsx}"],
     ...react.configs.flat.recommended,
     ...reactHooks.configs["recommended-latest"],
+    ...eslint.configs.recommended,
     ...jsxA11y.flatConfigs.recommended,
     languageOptions: {
       globals: {
