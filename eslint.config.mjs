@@ -33,6 +33,7 @@ export default defineConfig([
       "react-hooks/rules-of-hooks": "error",
       "react-hooks/exhaustive-deps": "error",
       "no-unused-vars": "off",
+      "@next/next/no-img-element": "off",
 
       quotes: [
         1,
