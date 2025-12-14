@@ -1,6 +1,13 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+
+/** Add named colors to tailwind */
+@theme {
+  --color-background: var(--background);
+  --color-text-color: var(--text-color);
+  --color-primary: var(--primary);
+  --color-tag-background: var(--tag-background);
+  --color-grade: var(--grade);
+}
 
 @layer base {
   h1 {
