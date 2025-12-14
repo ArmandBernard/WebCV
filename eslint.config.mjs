@@ -16,7 +16,6 @@ export default defineConfig([
     ...react.configs.flat.recommended,
     ...reactHooks.configs["recommended-latest"],
     ...eslint.configs.recommended,
-    ...jsxA11y.flatConfigs.recommended,
     languageOptions: {
       globals: {
         ...globals.browser,
@@ -24,6 +23,7 @@ export default defineConfig([
     },
     plugins: {
       "react-hooks": reactHooks,
+      "jsx-a11y": jsxA11y,
     },
 
     rules: {
