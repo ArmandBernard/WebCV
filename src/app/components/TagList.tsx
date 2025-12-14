@@ -1,4 +1,3 @@
-/* eslint-disable  */
 import { FunctionComponent, ReactNode } from "react";
 
 const Tag: FunctionComponent<{
