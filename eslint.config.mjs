@@ -8,6 +8,9 @@ import nextPlugin from "@next/eslint-plugin-next";
 import globals from "globals";
 
 export default defineConfig([
+  {
+    ignores: [".next/**", "dist/**"],
+  },
   ...tseslint.configs.recommended.map((config) => ({
     ...config,
     files: ["src/**/*.{ts,tsx}"],
