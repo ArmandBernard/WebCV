@@ -10,16 +10,16 @@
     "lint": "eslint ."
   },
   "dependencies": {
-    "react": "19.2.6",
-    "react-dom": "19.2.6"
+    "react": "19.3.0",
+    "react-dom": "19.3.0"
   },
   "devDependencies": {
     "@eslint/js": "9.39.4",
     "@next/eslint-plugin-next": "16.2.6",
     "@tailwindcss/postcss": "4.3.0",
     "@types/node": "24.12.4",
-    "@types/react": "19.2.15",
-    "@types/react-dom": "19.2.3",
+    "@types/react": "19.3.0",
+    "@types/react-dom": "19.3.0",
     "eslint": "9.39.4",
     "eslint-config-next": "16.2.6",
     "eslint-plugin-jsx-a11y": "6.10.2",
